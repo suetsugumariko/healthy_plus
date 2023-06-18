@@ -1,98 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'cooking_menu_list/index'
-    get 'cooking_menu_list/new'
-    get 'cooking_menu_list/create'
-    get 'cooking_menu_list/show'
-    get 'cooking_menu_list/edit'
-    get 'cooking_menu_list/update'
-  end
-  namespace :admin do
-    get 'customers/index'
-    get 'customers/new'
-    get 'customers/create'
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/update'
-  end
-  namespace :admin do
-    get 'beauty_nutrition_knowledge/index'
-    get 'beauty_nutrition_knowledge/new'
-    get 'beauty_nutrition_knowledge/create'
-    get 'beauty_nutrition_knowledge/show'
-    get 'beauty_nutrition_knowledge/edit'
-    get 'beauty_nutrition_knowledge/update'
-  end
-  namespace :admin do
-    get 'homes/top'
-  end
-  namespace :public do
-    get 'next_medical_checkup_date_list/index'
-    get 'next_medical_checkup_date_list/new'
-    get 'next_medical_checkup_date_list/edit'
-    get 'next_medical_checkup_date_list/update'
-    get 'next_medical_checkup_date_list/destroy'
-  end
-  namespace :public do
-    get 'prescription_list/index'
-    get 'prescription_list/new'
-    get 'prescription_list/edit'
-    get 'prescription_list/update'
-    get 'prescription_list/destroy'
-  end
-  namespace :public do
-    get 'dosage_record_sheet/index'
-    get 'dosage_record_sheet/new'
-    get 'dosage_record_sheet/edit'
-    get 'dosage_record_sheet/update'
-    get 'dosage_record_sheet/destroy'
-  end
-  namespace :public do
-    get 'activity_and_sleep_log_chart/index'
-    get 'activity_and_sleep_log_chart/new'
-    get 'activity_and_sleep_log_chart/edit'
-    get 'activity_and_sleep_log_chart/update'
-    get 'activity_and_sleep_log_chart/destroy'
-  end
-  namespace :public do
-    get 'health_record/index'
-    get 'health_record/new'
-    get 'health_record/edit'
-    get 'health_record/update'
-    get 'health_record/destroy'
-  end
-  namespace :public do
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/update'
-  end
-  namespace :public do
-    get 'beauty_nutrition_knowledge/index'
-  end
-  namespace :public do
-    get 'cooking_menu_list/index'
-  end
-  namespace :public do
-    get 'homes/top'
-    get 'homes/about'
-  end
-  namespace :public do
-    namespace :public do
-      get 'homes/top'
-      get 'homes/about'
-    end
-  end
-  namespace :public do
-    namespace :public do
-      get 'cooking_menu_list/index'
-    end
-  end
-  namespace :public do
-    namespace :public do
-      get 'beauty_nutrition_knowledge/index'
-    end
-  end
+
   # 顧客用
 # URL /customers/sign_in ...
 #生成したコントローラがどこに存在するのかを記述
@@ -100,6 +8,89 @@ devise_for :customers, skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
 }
+
+ scope module: :public do
+      root to: 'homes#top'
+       get   '/about' => 'homes#about'
+
+    resources :homes,only: [:top,:about]
+    resources :cooking_menu_lists,only: [:index]
+    resources :beauty_nutrition_knowledges,only: [:index]
+
+      get   '/customers/my_page' => 'customers#show'
+      get   '/customers/edit' => 'customers#edit'
+      patch '/customers/infomation' => 'customers#update'
+      get   '/customers/unsubscribe' => 'customers#unsubscribe'
+      patch '/customers/withdraw' => 'customers#withdraw'
+      get   '/customers/guest' => 'customers#index'
+
+
+    resources :health_records,only: [:index,:new,:edit,:update,:destroy] do
+      get    '/health_records' => 'health_records#index'
+      post   '/health_records/new' => 'health_records#new'
+      get    '/health_records/:id/edit' => 'health_records#edit'
+      patch  '/health_records/:id' => 'health_records#update'
+      delete '/health_records/:id' => 'health_records#destroy'
+
+  end
+
+
+    resources :activity_and_sleep_log_charts,only: [:index,:new,:edit,:update,:destroy] do
+      get    '/activity_and_sleep_log_charts'  => 'activity_and_sleep_log_charts#index'
+      post   '/activity_and_sleep_log_charts/new' => 'activity_and_sleep_log_charts#new'
+      get    '/activity_and_sleep_log_charts/:id/edit' => 'activity_and_sleep_log_charts#edit'
+      patch  '/activity_and_sleep_log_charts/:id' =>'activity_and_sleep_log_charts#update'
+      delete '/activity_and_sleep_log_charts/:id' => 'activity_and_sleep_log_charts#destroy'
+  end
+
+
+    resources :dosage_record_sheets,only: [:index,:new,:edit,:update,:destroy] do
+      get    '/dosage_record_sheets' => 'dosage_record_sheets#index'
+      post   '/dosage_record_sheets/new' => 'dosage_record_sheets#new'
+      get    '/dosage_record_sheets/:id/edit' => 'dosage_record_sheets#edit'
+      patch  '/dosage_record_sheets/:id' => 'dosage_record_sheets#update'
+      delete 'dosage_record_sheets/:id' => 'dosage_record_sheets#destroy'
+  end
+
+
+    resources :dosage_record_sheets,only: [:index,:new,:edit,:update,:destroy] do
+      get    '/prescription_lists' => 'prescription_lists#index'
+      post   '/prescription_lists/new' => 'prescription_lists#new'
+      get    '/prescription_lists/:id/edit' => 'prescription_lists#edit'
+      patch  '/prescription_lists/:id' => 'prescription_lists#update'
+      delete '/prescription_lists/:id' => 'prescription_lists#destroy'
+  end
+
+
+    resources :dosage_record_sheets,only: [:index,:new,:edit,:update,:destroy] do
+      get    '/next_medical_checkup_date_list' => 'next_medical_checkup_date_list#index'
+      post   '/next_medical_checkup_date_list/new' => 'next_medical_checkup_date_list#new'
+      get    '/next_medical_checkup_date_list/:id/edit' => 'next_medical_checkup_date_list#edit'
+      patch  '/next_medical_checkup_date_list/:id' => 'next_medical_checkup_date_list#update'
+      delete '/next_medical_checkup_date_list/:id' => 'next_medical_checkup_date_list#destroy'
+    end
+ end
+
+  #namespace :public do
+    #get 'customers/show'
+    #get 'customers/edit'
+    #get 'customers/update'
+    #get 'customers/unsubscribe'
+    #get 'customers/withdraw'
+  #end
+  #namespace :public do
+    #get 'sessions/new'
+    #get 'sessions/create'
+    #get 'sessions/destroy'
+  #end
+  #namespace :public do
+    #get 'registrations/new'
+    #get 'registrations/create'
+  #end
+
+
+
+
 
 # 管理者用
 # URL /admin/sign_in ...
@@ -109,7 +100,41 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
 }
 
 
+ namespace :admin do
+      get  '/admin' => 'homes#top'
+    resources :customers,only: [:index,:show,:edit,:update]
+    resources :beauty_nutrition_knowledges,only: [:index,:new,:create,:show,:edit,:update]
+      get  '/admin/beauty_nutrition_knowledges' => 'beauty_nutrition_knowledges#index'
+      get  '/admin/beauty_nutrition_knowledges/new' => 'beauty_nutrition_knowledges#new'
+      post '/admin/beauty_nutrition_knowledges' => 'beauty_nutrition_knowledges#create'
+      get  '/admin/beauty_nutrition_knowledges/:id' => 'beauty_nutrition_knowledges#show'
+      get  '/admin/beauty_nutrition_knowledges/:id/edit' => 'beauty_nutrition_knowledges#edit'
+      patch'/admin/beauty_nutrition_knowledges/:id' => 'beauty_nutrition_knowledges#update'
+
+
+
+    resources :cooking_menu_lists,only: [:index,:new,:create,:show,:edit,:update] do
+     get '/admin/cooking_menu_lists/index' => 'cooking_menu_lists#index'
+     get '/admin/cooking_menu_lists/new' => 'cooking_menu_lists#new'
+     post '/admin/cooking_menu_lists' => 'cooking_menu_lists#create'
+     get '/admin/cooking_menu_lists/:id' => 'cooking_menu_lists#show'
+     get '/admin/cooking_menu_lists/:id/edit' => 'cooking_menu_lists#edit'
+     patch '/admin/cooking_menu_lists/:id' => 'cooking_menu_lists#update'
+  end
+
+    #get 'customers/index'
+    #get 'customers/show'
+    #get 'customers/edit'
+    #get 'customers/update'
+  #end
+
+    #get 'sessions/new'
+    #get 'sessions/create'
+    #get 'sessions/destroy'
+  #end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-root to: "homes#top"
+
+ end
 end
