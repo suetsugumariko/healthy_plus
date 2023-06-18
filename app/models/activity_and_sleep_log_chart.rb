@@ -1,0 +1,2 @@
+class ActivityAndSleepLogChart < ApplicationRecord
+end

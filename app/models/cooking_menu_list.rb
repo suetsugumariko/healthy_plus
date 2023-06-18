@@ -1,0 +1,2 @@
+class CookingMenuList < ApplicationRecord
+end

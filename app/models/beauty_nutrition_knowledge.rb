@@ -1,0 +1,2 @@
+class BeautyNutritionKnowledge < ApplicationRecord
+end

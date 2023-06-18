@@ -1,0 +1,2 @@
+class NextMedicalCheckupDateList < ApplicationRecord
+end
