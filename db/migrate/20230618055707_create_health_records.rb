@@ -12,10 +12,12 @@ class CreateHealthRecords < ActiveRecord::Migration[6.1]
       t.float :temperature
       #脈拍
       t.integer :pulse
-      #血圧
-      t.string :blood_pressure
+      #最高血圧
+      t.integer :max_blood_pressure
+      #最低血圧
+      t.integer :min_blood_pressure
       #SPO2
-      t.integer :saturation
+      t.integer :saturations
 
 
 

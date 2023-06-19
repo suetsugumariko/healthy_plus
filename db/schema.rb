@@ -105,7 +105,8 @@ ActiveRecord::Schema.define(version: 2023_06_18_055854) do
     t.float "body_weight"
     t.float "temperature"
     t.integer "pulse"
-    t.string "blood_pressure"
+    t.integer "max_blood_pressure"
+    t.integer "min_blood_pressure"
     t.integer "saturation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
