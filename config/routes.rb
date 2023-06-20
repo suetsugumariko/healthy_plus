@@ -14,9 +14,11 @@ devise_for :customers, skip: [:passwords], controllers: {
        get   '/about' => 'homes#about'
 
     resources :homes,only: [:top,:about]
+    #食事メニュー表
     resources :cooking_menu_lists,only: [:index]
+    #美容、栄養豆知識表
     resources :beauty_nutrition_knowledges,only: [:index]
-
+    #会員
       get   '/customers/my_page' => 'customers#show'
       get   '/customers/edit' => 'customers#edit'
       patch '/customers/infomation' => 'customers#update'
@@ -24,7 +26,7 @@ devise_for :customers, skip: [:passwords], controllers: {
       patch '/customers/withdraw' => 'customers#withdraw'
       get   '/customers/guest' => 'customers#index'
 
-
+    #体調管理記録表
     resources :health_records,only: [:index,:new,:edit,:update,:destroy] do
       get    '/health_records' => 'health_records#index'
       post   '/health_records/new' => 'health_records#new'
@@ -34,7 +36,7 @@ devise_for :customers, skip: [:passwords], controllers: {
 
   end
 
-
+    #活動、睡眠記録表
     resources :activity_and_sleep_log_charts,only: [:index,:new,:edit,:update,:destroy] do
       get    '/activity_and_sleep_log_charts'  => 'activity_and_sleep_log_charts#index'
       post   '/activity_and_sleep_log_charts/new' => 'activity_and_sleep_log_charts#new'
@@ -43,7 +45,7 @@ devise_for :customers, skip: [:passwords], controllers: {
       delete '/activity_and_sleep_log_charts/:id' => 'activity_and_sleep_log_charts#destroy'
   end
 
-
+    #服用記録表
     resources :dosage_record_sheets,only: [:index,:new,:edit,:update,:destroy] do
       get    '/dosage_record_sheets' => 'dosage_record_sheets#index'
       post   '/dosage_record_sheets/new' => 'dosage_record_sheets#new'
@@ -52,8 +54,8 @@ devise_for :customers, skip: [:passwords], controllers: {
       delete 'dosage_record_sheets/:id' => 'dosage_record_sheets#destroy'
   end
 
-
-    resources :dosage_record_sheets,only: [:index,:new,:edit,:update,:destroy] do
+    #処方箋一覧
+    resources :prescription_lists,only: [:index,:new,:edit,:update,:destroy] do
       get    '/prescription_lists' => 'prescription_lists#index'
       post   '/prescription_lists/new' => 'prescription_lists#new'
       get    '/prescription_lists/:id/edit' => 'prescription_lists#edit'
@@ -61,13 +63,13 @@ devise_for :customers, skip: [:passwords], controllers: {
       delete '/prescription_lists/:id' => 'prescription_lists#destroy'
   end
 
-
-    resources :dosage_record_sheets,only: [:index,:new,:edit,:update,:destroy] do
-      get    '/next_medical_checkup_date_list' => 'next_medical_checkup_date_list#index'
-      post   '/next_medical_checkup_date_list/new' => 'next_medical_checkup_date_list#new'
-      get    '/next_medical_checkup_date_list/:id/edit' => 'next_medical_checkup_date_list#edit'
-      patch  '/next_medical_checkup_date_list/:id' => 'next_medical_checkup_date_list#update'
-      delete '/next_medical_checkup_date_list/:id' => 'next_medical_checkup_date_list#destroy'
+    #次回受診日表
+    resources :next_medical_checkup_date_lists,only: [:index,:new,:edit,:update,:destroy] do
+      get    '/next_medical_checkup_date_lists' => 'next_medical_checkup_date_list#index'
+      post   '/next_medical_checkup_date_lists/new' => 'next_medical_checkup_date_list#new'
+      get    '/next_medical_checkup_date_lists/:id/edit' => 'next_medical_checkup_date_list#edit'
+      patch  '/next_medical_checkup_date_lists/:id' => 'next_medical_checkup_date_list#update'
+      delete '/next_medical_checkup_date_lists/:id' => 'next_medical_checkup_date_list#destroy'
     end
  end
 
@@ -103,6 +105,7 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
  namespace :admin do
       get  '/admin' => 'homes#top'
     resources :customers,only: [:index,:show,:edit,:update]
+    #管理者　美容、栄養豆知識表
     resources :beauty_nutrition_knowledges,only: [:index,:new,:create,:show,:edit,:update]
       get  '/admin/beauty_nutrition_knowledges' => 'beauty_nutrition_knowledges#index'
       get  '/admin/beauty_nutrition_knowledges/new' => 'beauty_nutrition_knowledges#new'
@@ -112,7 +115,7 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
       patch'/admin/beauty_nutrition_knowledges/:id' => 'beauty_nutrition_knowledges#update'
 
 
-
+    #管理者　食事メニュー表
     resources :cooking_menu_lists,only: [:index,:new,:create,:show,:edit,:update] do
      get '/admin/cooking_menu_lists/index' => 'cooking_menu_lists#index'
      get '/admin/cooking_menu_lists/new' => 'cooking_menu_lists#new'
