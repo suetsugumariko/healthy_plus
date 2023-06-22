@@ -11,6 +11,7 @@ devise_for :customers, skip: [:passwords], controllers: {
 
  scope module: :public do
       root to: 'homes#top'
+       post '/homes' => 'homes#creat'
        get   '/about' => 'homes#about'
 
     resources :homes,only: [:top,:about]
@@ -18,7 +19,7 @@ devise_for :customers, skip: [:passwords], controllers: {
     resources :cooking_menu_lists,only: [:index]
     #美容、栄養豆知識表
     resources :beauty_nutrition_knowledges,only: [:index]
-    #会員s
+    #会員
       get   '/customers/my_page' => 'customers#show'
       get   '/customers/edit' => 'customers#edit'
       patch '/customers/infomation' => 'customers#update'
