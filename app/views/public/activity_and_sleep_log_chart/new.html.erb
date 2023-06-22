@@ -1,2 +1,17 @@
 <h1>Public::ActivityAndSleepLogChart#new</h1>
 <p>Find me in app/views/public/activity_and_sleep_log_chart/new.html.erb</p>
+
+<p>活動、睡眠記録表</p>
+
+
+<%= form_with model: ActivityAndSleepLogChart.new do |f| %>
+
+<h4>運動時間</h4>
+  <%= f.number_field :exercise_time %>時間
+  <h4>睡眠</h4>
+  <%= f.number_field :hours_of_sleep %>時間
+
+
+  <%= f.submit  '登録' %>
+
+<% end %>
