@@ -3,7 +3,7 @@
 
 <p>体調記録表</p>
 
-<%= form_with model: HealthRecord.new do |f| %>
+<%= form_with(model: @customer, url: health_record_health_records_new_path, local: true) do |f| %>
   <h4>日付</h4>
   <%= f.date_field :start_time %>
   <h4>体重</h4>

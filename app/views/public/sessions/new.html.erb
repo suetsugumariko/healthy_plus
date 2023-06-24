@@ -1,9 +1,9 @@
-<h4>このサイトはポートフォリオ用のテストサイトです。長期的な利用はできません。サイトが閉鎖される可能性があります。</h4>
+<h2>このサイトはポートフォリオ用のテストサイトです。長期的な利用はできません。サイトが閉鎖される可能性があります。</h2>
 
 
-<h2>Log in</h2>
+<h2>会員ログイン</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with model: @customer, url: customer_session_path, local: true do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -22,8 +22,14 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "ログイン" %>
   </div>
 <% end %>
 
-<%= render "public/shared/links" %>
+
+<h2>会員登録がお済でない方は</h2>
+  <div><%= link_to "こちら", new_customer_registration_path %>から新規登録をおこなってください。</div>
+<h2>ゲストログインの方は</h2>
+  <div><%= link_to "こちら", customers_guest_path %></div>
+
+<%#= render "public/shared/links" %>

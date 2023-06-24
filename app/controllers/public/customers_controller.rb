@@ -1,5 +1,10 @@
 class Public::CustomersController < ApplicationController
 
+
+  def new
+  end
+
+
   def index
      @customer = Customer.new
      @customer = Customer.all
@@ -15,6 +20,7 @@ class Public::CustomersController < ApplicationController
   end
 
   def show
+     @customer = current_customer
   end
 
   def edit

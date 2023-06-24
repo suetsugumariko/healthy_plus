@@ -1,7 +1,7 @@
 <h1>Public::PrescriptionList#new</h1>
 <p>Find me in app/views/public/prescription_list/new.html.erb</p>
 <p>処方薬</p>
-<%= form_with model: PrescriptionList.new do |f| %>
+<%= form_with model: @prescriptionlist.new do |f| %>
   <h4>薬品名</h4>
   <%= f.text_field :chemical_name %>
   <h4>処方日付</h4>

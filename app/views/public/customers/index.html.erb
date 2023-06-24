@@ -12,7 +12,7 @@
 
 
 
-<%= form_with model: Cutomer.new do |f| %>
+<%= form_with(model: @customer, url: customers_guest_path, local: true) do |f| %>
   <h4>日付</h4>
   <%= f.date_field :start_time %>
   <h4>体重</h4>
