@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.7'
 #画像のサイズ変更を行うGemを導入する
  gem 'image_processing', '~> 1.2'
 
+#シンプルカレンダー導入
+gem 'simple_calendar', '~> 2.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

@@ -1,0 +1,15 @@
+
+
+<h2>退会確認</h2>
+
+
+<p>本当に退会されますか？</p>
+
+
+<p>退会すると、会員登録情報や、これまでのデータが閲覧できなくなります。</p>
+<p>退会する場合は、「退会する」をクリックしてください。</p>
+
+
+
+<p><%= link_to "マイページに戻る",customers_my_page_path, class: "btn btn-primary" %></p>
+<p><%= link_to "退会する", customers_withdraw_path, method: :patch, "data-confirm" => "OKを押すと退会処理がされます。本当によろしいですか？", class: "btn btn-danger" %></p>

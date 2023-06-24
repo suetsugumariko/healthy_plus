@@ -1,7 +1,11 @@
 <h4>このサイトはポートフォリオ用のテストサイトです。長期的な利用はできません。サイトが閉鎖される可能性があります。</h4>
 
+<h2>ゲストログイン</h2>
+<p>こちら</p>
 
-<h2>Sign up</h2>
+
+
+<h2>新規会員登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
@@ -30,3 +34,7 @@
 <% end %>
 
 <%= render "public/shared/links" %>
+
+
+<h2>既に登録済の方</h2>
+<p>こちらからログインしてください。</p>
