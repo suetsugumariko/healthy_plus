@@ -8,6 +8,7 @@ class Public::CustomersController < ApplicationController
   def index
      @customer = Customer.new
      @customer = Customer.all
+     @goals = Goals.all
   end
 
   def create
