@@ -1,5 +1,4 @@
-<h1>Public::Customers#show</h1>
-<p>Find me in app/views/public/customers/show.html.erb</p>
+
 
 <h4><%= link_to '会員情報編集', edit_customer_registration_path %></h4>
 
@@ -12,10 +11,10 @@
 <p>メールアドレス</p>
 <p><%= @customer.email %></p>
 
-<h6><%#= link_to '服用チェック表', dosage_record_sheet_dosage_record_sheets_path %></h6>
-<h6><%= link_to '処方薬一覧', prescription_list_prescription_lists_path %></h6>
-<h6><%= link_to '次回受診日カレンダー', next_medical_checkup_date_list_next_medical_checkup_date_lists_path %></h6>
+<h6><%= link_to '服用チェック表', dosage_record_sheets_path %></h6>
+<h6><%= link_to '処方薬一覧', prescription_lists_path %></h6>
+<h6><%= link_to '次回受診日カレンダー', next_medical_checkup_date_lists_path %></h6>
 <h6><%= link_to '体調記録表', health_records_path%></h6>
-<h6><%= link_to '活動、睡眠記録表', activity_and_sleep_log_chart_activity_and_sleep_log_charts_path %></h6>
+<h6><%= link_to '活動、睡眠記録表', activity_and_sleep_log_charts_path %></h6>
 <h6><%= link_to '食事メニュー　一覧', cooking_menu_lists_path %></h6>
 <h6><%= link_to '美容、栄養　豆知識', beauty_nutrition_knowledges_path %></h6>

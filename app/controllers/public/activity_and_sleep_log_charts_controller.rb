@@ -1,4 +1,4 @@
-class Public::HealthRecordController < ApplicationController
+class Public::ActivityAndSleepLogChartsController < ApplicationController
   def index
   end
 

@@ -1,4 +1,4 @@
-class Admin::BeautyNutritionKnowledgeController < ApplicationController
+class Admin::BeautyNutritionKnowledgesController < ApplicationController
   def index
   end
 

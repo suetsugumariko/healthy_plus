@@ -1,4 +1,4 @@
-class Admin::CookingMenuListController < ApplicationController
+class Admin::CookingMenuListsController < ApplicationController
   def index
   end
 

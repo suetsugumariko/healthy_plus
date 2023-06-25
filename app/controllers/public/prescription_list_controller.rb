@@ -1,5 +1,6 @@
 class Public::PrescriptionListController < ApplicationController
   def index
+    @prescriptionlist = PrescriptionList.all
   end
 
   def new

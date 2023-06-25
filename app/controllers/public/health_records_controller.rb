@@ -1,4 +1,4 @@
-class Public::NextMedicalCheckupDateListController < ApplicationController
+class Public::HealthRecordsController < ApplicationController
   def index
   end
 

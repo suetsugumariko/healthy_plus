@@ -1,0 +1,28 @@
+<h1>Public::DosageRecordSheet#new</h1>
+<p>Find me in app/views/public/dosage_record_sheet/new.html.erb</p>
+#服用チェック
+
+
+<%= form_with(model: @dosage_record_sheet, local: true) do |f| %>
+
+  <div class="title">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+    <div class="time">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+  </div>
+
+  <div class="content">
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+  </div>
+
+
+  <div class="submit">
+    <%= f.submit %>
+  </div>
+
+<% end %>
