@@ -8,6 +8,7 @@ class Public::CustomersController < ApplicationController
   def index
      @customer = Customer.new
      @customer = Customer.all
+     #グラフに関する内容
      #@records = HealthRecord.all
   end
 
