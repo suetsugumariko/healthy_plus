@@ -5,15 +5,14 @@
 <p>体調記録表</p>
 #複数のグラフ
 
-<%= line_chart @goals.map { |goal|
-    {name: goal.name, data: goal.feats.group_by_week(:created_at).count}
+<%#= line_chart @records.map { |record|
+    {name: record.start_time, data: record.body_weight }
 } %>
 
 <p>活動、睡眠記録表</p>
 #縦棒グラフ
-<%= column_chart Order.group_by_day_of_week(:created_at, format: "%a").count %>
+<%#= column_chart Order.group_by_day_of_week(:created_at, format: "%a").count %>
 
-ss
 
 
 <%= form_with(model: @customer, url: customers_guest_path, local: true) do |f| %>
