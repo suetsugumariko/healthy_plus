@@ -1,2 +1,16 @@
 <h1>Admin::BeautyNutritionKnowledge#index</h1>
 <p>Find me in app/views/admin/beauty_nutrition_knowledge/index.html.erb</p>
+<h2>美容栄養豆知識</h2>
+
+<%= @beauty_nutrition_knowledges.each do |beauty_nutrition_knowledge| %>
+
+  <p>ジャンル名</p>
+  <span><%= beauty_nutrition_knowledge.genre_id %></span>
+
+   <p>タイトル</p>
+  <span><%= beauty_nutrition_knowledge.title %></span>
+
+   <p>内容</p>
+  <span><%= beauty_nutrition_knowledge.contrnts %></span>
+
+<% end %>

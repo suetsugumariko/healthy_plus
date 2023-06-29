@@ -1,5 +1,6 @@
 class Admin::BeautyNutritionKnowledgesController < ApplicationController
   def index
+    @beauty_nutrition_knowledges = BeautyNutritionKnowledge.all
   end
 
   def new
