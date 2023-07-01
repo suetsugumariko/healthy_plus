@@ -1,2 +1,20 @@
 <h1>Admin::CookingMenuList#index</h1>
 <p>Find me in app/views/admin/cooking_menu_list/index.html.erb</p>
+<h2>食事メニューの一覧</h2>
+
+<% @cooking_menu_list.each do |cooking_menu_list| %>
+
+  <p>タイトル</p>
+  <span><%= link_to cooking_menu_list.title, admin_cooking_menu_list_path(admin_cooking_menu_list.id) %></span>
+
+   <p>何人前</p>
+  <span><%= link_to cooking_menu_list.for_how_meny_people, admin_cooking_menu_list_path(admin_cooking_menu_list.id) %></span>
+
+   <p>材料</p>
+  <span><%= link_to cooking_menu_list.material, admin_cooking_menu_list_path(admin_cooking_menu_list.id) %></span>
+
+   <p>作り方</p>
+  <span><%= link_to cooking_menu_list.way_of_making, admin_cooking_menu_list_path(admin_cooking_menu_list.id) %></span>
+
+
+<% end %>

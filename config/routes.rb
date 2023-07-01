@@ -105,9 +105,9 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
 
  namespace :admin do
       get  '/admin' => 'homes#top'
-    resources :customers,only: [:index,:show,:edit,:update]
+    resources :customers,only: [:index,:show,:edit,:update,:destroy]
     #管理者　美容、栄養豆知識表
-    resources :beauty_nutrition_knowledges,only: [:index,:new,:create,:show,:edit,:update] do
+    resources :beauty_nutrition_knowledges,only: [:index,:new,:create,:show,:edit,:update,:destroy] do
       #get  '/admin/beauty_nutrition_knowledges' => 'beauty_nutrition_knowledges#index'
       #get  '/admin/beauty_nutrition_knowledges/new' => 'beauty_nutrition_knowledges#new'
       #post '/admin/beauty_nutrition_knowledges' => 'beauty_nutrition_knowledges#create'
@@ -116,7 +116,7 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
       #patch'/admin/beauty_nutrition_knowledges/:id' => 'beauty_nutrition_knowledges#update'
   end
     #管理者　食事メニュー表
-    resources :cooking_menu_lists,only: [:index,:new,:create,:show,:edit,:update] do
+    resources :cooking_menu_lists,only: [:index,:new,:create,:show,:edit,:update,:destroy] do
      #get '/admin/cooking_menu_lists/index' => 'cooking_menu_lists#index'
      #get '/admin/cooking_menu_lists/new' => 'cooking_menu_lists#new'
      #post '/admin/cooking_menu_lists' => 'cooking_menu_lists#create'
