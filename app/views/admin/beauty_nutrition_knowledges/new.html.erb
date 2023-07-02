@@ -1,8 +1,7 @@
-<h1>Admin::BeautyNutritionKnowledge#new</h1>
-<p>Find me in app/views/admin/beauty_nutrition_knowledge/new.html.erb</p>
+
 <h2>美容栄養豆知識</h2>
 
-<%= form_with model: BeautyNutritionKnowledge.new do |f| %>
+<%= form_with model: @beauty_nutrition_knowledge, url: ' /admin/beauty_nutrition_knowledges', method: :post do |f| %>
   <h4>タイトル</h4>
   <%= f.text_field :title %>
 

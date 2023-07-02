@@ -2,15 +2,17 @@
 <p>Find me in app/views/admin/beauty_nutrition_knowledge/index.html.erb</p>
 <h2>美容栄養豆知識</h2>
 
-<%= @beauty_nutrition_knowledges.each do |beauty_nutrition_knowledge| %>
+<% @beauty_nutrition_knowledges.each do |beauty_nutrition_knowledge| %>
 
   <p>ジャンル名</p>
-  <span><%= beauty_nutrition_knowledge.genre_id %></span>
+  <span><%= link_to beauty_nutrition_knowledge.genre_id,  admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id) %></span>
 
    <p>タイトル</p>
-  <span><%= beauty_nutrition_knowledge.title %></span>
+  <span><%= link_to beauty_nutrition_knowledge.title,  admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id) %></span>
 
    <p>内容</p>
-  <span><%= beauty_nutrition_knowledge.contrnts %></span>
+  <span><%= link_to beauty_nutrition_knowledge.contrnts,  admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id) %></span>
+
+
 
 <% end %>

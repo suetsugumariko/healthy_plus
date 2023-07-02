@@ -1,2 +1,15 @@
-<h1>Admin::BeautyNutritionKnowledge#show</h1>
-<p>Find me in app/views/admin/beauty_nutrition_knowledge/show.html.erb</p>
+
+<h2>美容栄養豆知識 詳細画面</h2>
+
+
+  <p>ジャンル名</p>
+  <span><%= @beauty_nutrition_knowledge.genre_id %></span>
+
+   <p>タイトル</p>
+  <span><%= @beauty_nutrition_knowledge.title %></span>
+
+   <p>内容</p>
+  <span><%= @beauty_nutrition_knowledge.contrnts %></span>
+
+  <%= link_to "編集",  edit_admin_beauty_nutrition_knowledge_path(@beauty_nutrition_knowledge.id) %>
+  <%= link_to "削除",  admin_beauty_nutrition_knowledge_path(@beauty_nutrition_knowledge.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
