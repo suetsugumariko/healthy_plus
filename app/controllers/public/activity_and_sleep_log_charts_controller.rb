@@ -5,7 +5,7 @@ class Public::ActivityAndSleepLogChartsController < ApplicationController
   def new
     @activity_and_sleep_log_chart = ActivityAndSleepLogChart.new
      #グラフに関する内容
-     @customers = Customer.all
+    @activity_and_sleep_log_charts = ActivityAndSleepLogChart.all
   end
 
 
