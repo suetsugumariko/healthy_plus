@@ -1,8 +1,7 @@
 
 <h2>美容栄養豆知識</h2>
 
-<%= form_with model: @beauty_nutrition_knowledge, url: ' /admin/beauty_nutrition_knowledges', method: :post do |f| %>
-  <h4>タイトル</h4>
+<%= form_with model: @beauty_nutrition_knowledge, url: admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id), method: :post do |f| %>
   <%= f.text_field :title %>
 
   <h4>ジャンル名</h4>

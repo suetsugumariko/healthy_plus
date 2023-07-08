@@ -1,4 +1,22 @@
-<h1>Public::HealthRecord#index</h1>
-<p>Find me in app/views/public/health_record/index.html.erb</p>
 
+<p>体調記録表</p>
 #体調管理表　グラフ
+
+<%= line_chart @health_records.map { |health_record|
+    {name: health_record.start_time, data: health_record.body_weight }
+} %>
+<%= line_chart @health_records.map { |health_record|
+    {name: health_record.start_time, data: health_record.temperature }
+} %>
+<%= line_chart @health_records.map { |health_record|
+    {name: health_record.start_time, data: health_record.pulse }
+} %>
+<%= line_chart @health_records.map { |health_record|
+    {name: health_record.start_time, data: health_record.max_blood_pressure }
+} %>
+<%= line_chart @health_records.map { |health_record|
+    {name: health_record.start_time, data: health_record.min_blood_pressure }
+} %>
+<%= line_chart @health_records.map { |health_record|
+    {name: health_record.start_time, data: health_record.saturation }
+} %>

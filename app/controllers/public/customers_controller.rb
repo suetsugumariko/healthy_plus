@@ -4,12 +4,12 @@ class Public::CustomersController < ApplicationController
   def new
   end
 
-
+  #ゲストログイン
   def index
      @customer = Customer.new
      @customer = Customer.all
      #グラフに関する内容
-     #@records = HealthRecord.all
+     @records = HealthRecord.all
   end
 
   def create

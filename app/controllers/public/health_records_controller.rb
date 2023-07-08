@@ -1,6 +1,8 @@
 class Public::HealthRecordsController < ApplicationController
   def index
     @health_record = HealthRecord.new
+     #グラフに関する内容
+     @health_records = HealthRecord.all
   end
 
   def new

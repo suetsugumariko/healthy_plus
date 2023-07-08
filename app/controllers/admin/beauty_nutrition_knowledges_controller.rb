@@ -13,7 +13,7 @@ class Admin::BeautyNutritionKnowledgesController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     beauty_nutrition_knowledge.save
     # 4. 詳細画面へリダイレクト
-    redirect_to admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id)
+    redirect_to  admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id)
   end
 
   def show
