@@ -8,14 +8,28 @@
 <%= line_chart @records.map { |record|
     {name: record.start_time, data: record.body_weight }
 } %>
+<%= line_chart @records.map { |record|
+    {name: record.start_time, data: record.temperature }
+} %>
+<%= line_chart @records.map { |record|
+    {name: record.start_time, data: record.max_blood_pressure }
+} %>
+<%= line_chart @records.map { |record|
+    {name: record.start_time, data: record.min_blood_pressure }
+} %>
+<%= line_chart @records.map { |record|
+    {name: record.start_time, data: record.saturation }
+} %>
+
 
 <p>活動、睡眠記録表</p>
 #縦棒グラフ
-<%= column_chart Order.group_by_day_of_week(:created_at, format: "%a").count %>
+<%= column_chart  @records.group_by_day_of_week(:exercise_time, format: "time").count %>
+<%= column_chart  @records.group_by_day_of_week(:hours_of_sleep, format: "time").count %>
 
 
 
-<%= form_with(model: @customer, url: customers_guest_path, local: true) do |f| %>
+<%= form_with(model: @records, url: customers_guest_path, local: true) do |f| %>
   <h4>日付</h4>
   <%= f.date_field :start_time %>
   <h4>体重</h4>
