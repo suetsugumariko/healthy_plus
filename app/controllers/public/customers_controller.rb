@@ -10,6 +10,7 @@ class Public::CustomersController < ApplicationController
      @customer = Customer.all
      #グラフに関する内容
      @records = HealthRecord.all
+     @activity_and_sleep_log_charts = ActivityAndSleepLogChart.all
   end
 
   def create

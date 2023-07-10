@@ -24,8 +24,8 @@
 
 <p>活動、睡眠記録表</p>
 #縦棒グラフ
-<%= column_chart  @records.group_by_day_of_week(:exercise_time, format: "time").count %>
-<%= column_chart  @records.group_by_day_of_week(:hours_of_sleep, format: "time").count %>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time).exercise_time %>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time).hours_of_sleep %>
 
 
 
