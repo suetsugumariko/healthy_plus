@@ -1,7 +1,11 @@
 
 
-<p>活動、睡眠記録表</p>
-#グラフ
-<%= column_chart @activity_and_sleep_log_charts.group_by_month(:created_at, format: "%a").count %>
+<p>運動時間　記録表</p>
 
+<%#= column_chart @activity_and_sleep_log_charts.group_by_month(:created_at, format: "%a").count %>
 <%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:exercise_time)%>
+
+
+
+<p>睡眠時間　記録表</p>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:hours_of_sleep)%>

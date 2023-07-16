@@ -1,22 +1,28 @@
 
 <p>体調記録表</p>
-#体調管理表　グラフ
 
-<%= line_chart @health_records.map { |health_record|
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:body_weight)%>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:temperature)%>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:pulse)%>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:max_blood_pressure,:min_blood_pressure)%>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:saturation)%>
+
+
+<%#= line_chart @health_records.map { |health_record|
     {name: health_record.start_time, data: health_record.body_weight }
 } %>
-<%= line_chart @health_records.map { |health_record|
+<%#= line_chart @health_records.map { |health_record|
     {name: health_record.start_time, data: health_record.temperature }
 } %>
-<%= line_chart @health_records.map { |health_record|
+<%#= line_chart @health_records.map { |health_record|
     {name: health_record.start_time, data: health_record.pulse }
 } %>
-<%= line_chart @health_records.map { |health_record|
+<%#= line_chart @health_records.map { |health_record|
     {name: health_record.start_time, data: health_record.max_blood_pressure }
 } %>
-<%= line_chart @health_records.map { |health_record|
+<%#= line_chart @health_records.map { |health_record|
     {name: health_record.start_time, data: health_record.min_blood_pressure }
 } %>
-<%= line_chart @health_records.map { |health_record|
+<%#= line_chart @health_records.map { |health_record|
     {name: health_record.start_time, data: health_record.saturation }
 } %>

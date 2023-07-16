@@ -16,9 +16,9 @@ devise_for :customers, skip: [:passwords], controllers: {
 
     resources :homes,only: [:top,:about]
     #食事メニュー表
-    resources :cooking_menu_lists,only: [:index]
+    resources :cooking_menu_lists,only: [:index,:create,]
     #美容、栄養豆知識表
-    resources :beauty_nutrition_knowledges,only: [:index]
+    resources :beauty_nutrition_knowledges,only: [:index,:create,]
     #会員
       get   '/customers/my_page' => 'customers#show'
       get   '/customers/edit' => 'customers#edit'
@@ -28,7 +28,7 @@ devise_for :customers, skip: [:passwords], controllers: {
       get   '/customers/guest' => 'customers#index'
 
     #体調管理記録表
-    resources :health_records,only: [:index,:new,:edit,:update,:destroy] do
+    resources :health_records,only: [:index,:new,:create,:edit,:update,:destroy] do
       #get    '/health_records' => 'health_records#index'
       #post   '/health_records/new' => 'health_records#new'
       #get    '/health_records/:id/edit' => 'health_records#edit'
@@ -56,7 +56,7 @@ devise_for :customers, skip: [:passwords], controllers: {
   end
 
     #処方箋一覧
-    resources :prescription_lists,only: [:index,:new,:edit,:update,:destroy] do
+    resources :prescription_lists,only: [:index,:new,:create,:edit,:update,:destroy] do
       #get    '/prescription_lists' => 'prescription_lists#index'
       #post   '/prescription_lists/new' => 'prescription_lists#new'
       #get    '/prescription_lists/:id/edit' => 'prescription_lists#edit'
@@ -65,7 +65,7 @@ devise_for :customers, skip: [:passwords], controllers: {
   end
 
     #次回受診日表
-    resources :next_medical_checkup_date_lists,only: [:index,:new,:edit,:update,:destroy] do
+    resources :next_medical_checkup_date_lists,only: [:index,:new,:create,:edit,:update,:destroy] do
       #get    '/next_medical_checkup_date_lists' => 'next_medical_checkup_date_list#index'
       #post   '/next_medical_checkup_date_lists/new' => 'next_medical_checkup_date_list#new'
       #get    '/next_medical_checkup_date_lists/:id/edit' => 'next_medical_checkup_date_list#edit'
@@ -105,7 +105,7 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
 
  namespace :admin do
       get  '/admin' => 'homes#top'
-    resources :customers,only: [:index,:show,:edit,:update,:destroy]
+    resources :customers,only: [:index,:show,:create,:edit,:update,:destroy]
     #管理者　美容、栄養豆知識表
     resources :beauty_nutrition_knowledges,only: [:index,:new,:create,:show,:edit,:update,:destroy] do
       #get  '/admin/beauty_nutrition_knowledges' => 'beauty_nutrition_knowledges#index'

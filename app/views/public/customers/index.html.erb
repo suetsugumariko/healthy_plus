@@ -3,29 +3,38 @@
 
 
 <p>体調記録表</p>
-#複数のグラフ
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:body_weight)%>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:temperature)%>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:pulse)%>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:max_blood_pressure,:min_blood_pressure)%>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:saturation)%>
 
-<%= line_chart @records.map { |record|
+<%#= line_chart @records.map { |record|
     {name: record.start_time, data: record.body_weight }
 } %>
-<%= line_chart @records.map { |record|
+<%#= line_chart @records.map { |record|
     {name: record.start_time, data: record.temperature }
 } %>
-<%= line_chart @records.map { |record|
+<%#= line_chart @records.map { |record|
     {name: record.start_time, data: record.max_blood_pressure }
 } %>
-<%= line_chart @records.map { |record|
+<%#= line_chart @records.map { |record|
     {name: record.start_time, data: record.min_blood_pressure }
 } %>
-<%= line_chart @records.map { |record|
+<%#= line_chart @records.map { |record|
     {name: record.start_time, data: record.saturation }
 } %>
 
 
-<p>活動、睡眠記録表</p>
-#縦棒グラフ
-<%= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
-<%= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
+
+<p>運動時間　記録表</p>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:exercise_time)%>
+
+<p>睡眠時間　記録表</p>
+<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:hours_of_sleep)%>
+
+<%#= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
+<%#= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
 
 
 

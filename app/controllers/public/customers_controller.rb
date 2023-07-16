@@ -18,8 +18,8 @@ class Public::CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     #データをデータベースに保存するためのsaveメソッド実行
     homes.save
-    #トップ画面へリダイレクト
-    redirect_to '/'
+    #index画面へリダイレクト
+    redirect_to customers_guest_path
   end
 
   def show

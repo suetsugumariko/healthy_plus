@@ -1,4 +1,4 @@
-class Public::PrescriptionListController < ApplicationController
+class Public::PrescriptionListsController < ApplicationController
   def index
     @prescriptionlist = PrescriptionList.all
   end
