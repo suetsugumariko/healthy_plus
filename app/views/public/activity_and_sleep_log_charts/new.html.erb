@@ -2,7 +2,7 @@
 <p>活動、睡眠記録表</p>
 
 
-<%= form_with(model: @activity_and_sleep_log_charts, url:new_activity_and_sleep_log_chart_path, local: true) do |f| %>
+<%= form_with(model: @activity_and_sleep_log_charts, url:activity_and_sleep_log_charts_path, local: true) do |f| %>
 
 <h4>運動時間</h4>
   <%= f.number_field :exercise_time %>時間

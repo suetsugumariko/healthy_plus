@@ -1,5 +1,6 @@
 class Public::ActivityAndSleepLogChartsController < ApplicationController
   def index
+    @activity_and_sleep_log_charts = ActivityAndSleepLogChart.all
   end
 
   def new
@@ -15,7 +16,7 @@ class Public::ActivityAndSleepLogChartsController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     activity_and_sleep_log_chart.save
     # 4. トップ画面へリダイレクト
-    redirect_to '/top'
+    redirect_to  activity_and_sleep_log_charts_path
   end
 
   def edit

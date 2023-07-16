@@ -91,6 +91,8 @@ GEM
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    groupdate (6.3.0)
+      activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -247,6 +249,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   chartkick
   devise
+  groupdate
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)

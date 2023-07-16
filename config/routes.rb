@@ -38,7 +38,7 @@ devise_for :customers, skip: [:passwords], controllers: {
   end
 
     #活動、睡眠記録表
-    resources :activity_and_sleep_log_charts,only: [:index,:new,:edit,:update,:destroy] do
+    resources :activity_and_sleep_log_charts,only: [:index,:new,:create,:edit,:update,:destroy] do
       #get    '/activity_and_sleep_log_charts'  => 'activity_and_sleep_log_charts#index'
       #post   '/activity_and_sleep_log_charts/new' => 'activity_and_sleep_log_charts#new'
       #get    '/activity_and_sleep_log_charts/:id/edit' => 'activity_and_sleep_log_charts#edit'
