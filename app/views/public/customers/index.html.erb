@@ -3,11 +3,11 @@
 
 
 <p>体調記録表</p>
-<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:body_weight)%>
-<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:temperature)%>
-<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:pulse)%>
-<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:max_blood_pressure,:min_blood_pressure)%>
-<%= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:saturation)%>
+<%= column_chart @records.group_by_day(:created_at, last: 7).sum(:body_weight)%>
+<%= column_chart @records.group_by_day(:created_at, last: 7).sum(:temperature)%>
+<%= column_chart @records.group_by_day(:created_at, last: 7).sum(:pulse)%>
+<%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:max_blood_pressure,:min_blood_pressure)%>
+<%= column_chart @records.group_by_day(:created_at, last: 7).sum(:saturation)%>
 
 <%#= line_chart @records.map { |record|
     {name: record.start_time, data: record.body_weight }
