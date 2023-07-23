@@ -1,5 +1,4 @@
-<h1>Admin::Customers#index</h1>
-<p>Find me in app/views/admin/customers/index.html.erb</p>
+
 
 <h2>会員一覧</h2>
 <%= @customers.each do |customer| %>
@@ -11,10 +10,10 @@
 <span><%= customer.last_name%></span><span><%= customer.first_name%></span>
 
 <p>メールアドレス</p>
-<span><%= customer.%></span>
+<span><%= customer.email%></span>
 
 <p>会員ステータス</p>
-   <% if customer.is_deleted %>
+   <% if customer.delete %>
    <p>有効</p>
     <% else %>
     <p>退会</p>
