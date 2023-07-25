@@ -27,14 +27,14 @@ class Public::CustomersController < ApplicationController
   end
 
   def edit
-     @customer = Customer.find(params[:id])
+     @customer = current_customer
   end
 
   def update
-    customer = Customer.find(params[:id])
+    customer = current_customer
     customer.update(customer_params)
     #マイページにリダイレクト
-    redirect_to customers_my_page_path(customer.id)
+    redirect_to customers_my_page_path
   end
 
   def unsubscribe
@@ -43,6 +43,7 @@ class Public::CustomersController < ApplicationController
   def withdraw
      @customer.update(is_active: false)
     reset_session
+     flash[:notice] = "退会処理を実行いたしました"
     redirect_to root_path
   end
 

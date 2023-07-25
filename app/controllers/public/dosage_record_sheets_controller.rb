@@ -11,7 +11,7 @@ class Public::DosageRecordSheetsController < ApplicationController
     #データを受け取り新規登録するためのインスタンス作成
     @dosage_record_sheet = DosageRecordSheet.new
     #データをデータベースに保存するためのsaveメソッド実行
-    dosage_record_sheet.save
+    @dosage_record_sheet.save
     #リダイレクト
     redirect_to  dosage_record_sheets_path
   end

@@ -3,10 +3,15 @@
 
 
 <p>体調記録表</p>
+<p>体重</p>
 <%= column_chart @records.group_by_day(:created_at, last: 7).sum(:body_weight)%>
+<p>体温</p>
 <%= column_chart @records.group_by_day(:created_at, last: 7).sum(:temperature)%>
+<p>脈拍</p>
 <%= column_chart @records.group_by_day(:created_at, last: 7).sum(:pulse)%>
-<%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:max_blood_pressure,:min_blood_pressure)%>
+<p>血圧</p>
+<%= column_chart @records.group_by_day(:created_at, last: 7).sum(:max_blood_pressure)+(:min_blood_pressure)%>
+<p>SPO2</p>
 <%= column_chart @records.group_by_day(:created_at, last: 7).sum(:saturation)%>
 
 <%#= line_chart @records.map { |record|
@@ -38,7 +43,7 @@
 
 
 
-<%= form_with(model: @records, url: customers_guest_path, local: true) do |f| %>
+<%= form_with(model: @records+@customer+@activity_and_sleep_log_charts, url: customers_guest_path, local: true) do |f| %>
   <h4>日付</h4>
   <%= f.date_field :start_time %>
   <h4>体重</h4>
