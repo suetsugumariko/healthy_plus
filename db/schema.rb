@@ -95,6 +95,8 @@ ActiveRecord::Schema.define(version: 2023_06_18_055854) do
   end
 
   create_table "dosage_record_sheets", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
     t.datetime "start_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -113,6 +115,8 @@ ActiveRecord::Schema.define(version: 2023_06_18_055854) do
   end
 
   create_table "next_medical_checkup_date_lists", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
     t.datetime "start_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

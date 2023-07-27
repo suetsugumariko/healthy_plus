@@ -28,7 +28,7 @@ class Public::DosageRecordSheetsController < ApplicationController
   private
 
   def dosage_record_sheet_parameter
-    params.require(:dosage_record_sheet).permit(:start_time, :title, :body)
+    params.require(:dosage_record_sheet).permit(:start_time, :title, :body,:content)
   end
 
 end

@@ -5,6 +5,8 @@ class CreateDosageRecordSheets < ActiveRecord::Migration[6.1]
 
       #服用記録ID
       #予定の日
+      t.string :title
+      t.text :content
       t.datetime :start_time
 
       t.timestamps
