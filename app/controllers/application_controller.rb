@@ -5,12 +5,16 @@ class ApplicationController < ActionController::Base
 
   #初期設定を上書き。　Aboutページへ遷移するよう設定
   def after_sign_in_path_for(resource)
-    about_path
+    if resource.class == Admin
+      admin_root_path
+    else
+      root_path
+    end
   end
 
   #ログアウト後、Aboutページへ遷移するよう設定
   def after_sign_out_path_for(resource)
-    about_path
+    root_path
   end
 
 

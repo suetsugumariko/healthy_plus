@@ -1,7 +1,7 @@
 class CreateHealthRecords < ActiveRecord::Migration[6.1]
   def change
     create_table :health_records do |t|
-
+      t.references :customer, null: false, foreign_key: true
 
       #体調管理ID
       #日付

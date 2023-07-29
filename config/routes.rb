@@ -35,7 +35,7 @@ devise_for :customers, skip: [:passwords], controllers: {
       #patch  '/health_records/:id' => 'health_records#update'
       #delete '/health_records/:id' => 'health_records#destroy'
 
-  end
+    end
 
     #活動、睡眠記録表
     resources :activity_and_sleep_log_charts,only: [:index,:new,:create,:edit,:update,:destroy] do
@@ -44,16 +44,16 @@ devise_for :customers, skip: [:passwords], controllers: {
       #get    '/activity_and_sleep_log_charts/:id/edit' => 'activity_and_sleep_log_charts#edit'
       #patch  '/activity_and_sleep_log_charts/:id' =>'activity_and_sleep_log_charts#update'
       #delete '/activity_and_sleep_log_charts/:id' => 'activity_and_sleep_log_charts#destroy'
-  end
+    end
 
     #服用記録表
-    resources :dosage_record_sheets,only: [:index,:new, :create, :edit,:update,:destroy] do
+    resources :dosage_record_sheets
       #get    '/dosage_record_sheets' => 'dosage_record_sheets#index'
       #post   '/dosage_record_sheets/new' => 'dosage_record_sheets#new'
       #get    '/dosage_record_sheets/:id/edit' => 'dosage_record_sheets#edit'
       #patch  '/dosage_record_sheets/:id' => 'dosage_record_sheets#update'
       #delete 'dosage_record_sheets/:id' => 'dosage_record_sheets#destroy'
-  end
+
 
     #処方箋一覧
     resources :prescription_lists,only: [:index,:new,:create,:edit,:update,:destroy] do
@@ -62,7 +62,7 @@ devise_for :customers, skip: [:passwords], controllers: {
       #get    '/prescription_lists/:id/edit' => 'prescription_lists#edit'
       #patch  '/prescription_lists/:id' => 'prescription_lists#update'
       #delete '/prescription_lists/:id' => 'prescription_lists#destroy'
-  end
+    end
 
     #次回受診日表
     resources :next_medical_checkup_date_lists,only: [:index,:new,:create,:edit,:update,:destroy] do
@@ -104,7 +104,7 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
 
 
  namespace :admin do
-      get  '/admin' => 'homes#top'
+    root 'homes#top'
     resources :customers,only: [:index,:show,:create,:edit,:update,:destroy]
     #管理者　美容、栄養豆知識表
     resources :beauty_nutrition_knowledges,only: [:index,:new,:create,:show,:edit,:update,:destroy] do

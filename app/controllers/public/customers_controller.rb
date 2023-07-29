@@ -6,11 +6,11 @@ class Public::CustomersController < ApplicationController
 
   #ゲストログイン
   def index
-     @customer = Customer.new
-     @customer = Customer.all
+     @customer = Customer.find(1)
+     #@customer = Customer.all
      #グラフに関する内容
-     @records = HealthRecord.all
-     @activity_and_sleep_log_charts = ActivityAndSleepLogChart.all
+     #@records = HealthRecord.all
+     @activity_and_sleep_log_charts = @customer.activity_and_sleep_log_charts
   end
 
   def create

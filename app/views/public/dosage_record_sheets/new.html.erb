@@ -4,7 +4,7 @@
 
 
 <%= form_with(model: @dosage_record_sheet, local: true) do |f| %>
-
+  <%= render 'layouts/error_messages', model: f.object %>
   <div class="title">
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -16,8 +16,8 @@
   </div>
 
   <div class="content">
-    <%= f.label :body %>
-    <%= f.text_field :body %>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
   </div>
 
 
