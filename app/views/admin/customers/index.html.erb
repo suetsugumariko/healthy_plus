@@ -1,7 +1,7 @@
 
 
 <h2>会員一覧</h2>
-<%= @customers.each do |customer| %>
+<% @customers.each do |customer| %>
 
 <p>会員ID</p>
 <span><%= customer.id%></span>
@@ -19,16 +19,6 @@
     <p>退会</p>
     <% end %>
 
-
-
-
-<h2>ゲストログイン一覧</h2>
-
-<p>ゲストID</p>
-<span><%= customer.id%></span>
-
-<p>ゲスト名</p>
-<span><%= customer.guest%></span>
 
 
 <% end %>

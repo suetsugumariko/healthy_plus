@@ -6,7 +6,7 @@ class Public::DosageRecordSheetsController < ApplicationController
   def new
     @dosage_record_sheet = DosageRecordSheet.new
   end
-  
+
   def show
     @dosage_record_sheet = DosageRecordSheet.find(params[:id])
   end

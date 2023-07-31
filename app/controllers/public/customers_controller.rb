@@ -4,7 +4,7 @@ class Public::CustomersController < ApplicationController
   def new
   end
 
-  #ゲストログイン
+  #サンプルデータ
   def index
      @customer = Customer.find(1)
      #@customer = Customer.all

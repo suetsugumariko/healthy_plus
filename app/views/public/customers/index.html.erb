@@ -1,17 +1,17 @@
 
-<h2>ゲストログイン</h2>
+<h2>見本</h2>
 
 
-<p>体調記録表</p>
-<p>体重</p>
+<p>会員になると、下記のように日々の記録がグラフとして表示されます。</p>
+<p></p>
 <%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:body_weight)%>
-<p>体温</p>
+<p></p>
 <%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:temperature)%>
-<p>脈拍</p>
+<p></p>
 <%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:pulse)%>
-<p>血圧</p>
+<p></p>
 <%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:max_blood_pressure)+(:min_blood_pressure)%>
-<p>SPO2</p>
+<p></p>
 <%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:saturation)%>
 
 <%#= line_chart @records.map { |record|
@@ -30,7 +30,7 @@
     {name: record.start_time, data: record.saturation }
 } %>
 
-<%= @activity_and_sleep_log_charts.inspect %>
+<%#= @activity_and_sleep_log_charts.inspect %>
 
 <p>運動時間　記録表</p>
 <%#= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:exercise_time)%>
@@ -40,28 +40,33 @@
 
 <%#= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
 <%#= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
+血圧の内容
 <%= line_chart [:exercise_time, :hours_of_sleep].map{ |o| { name: o.to_s, data: @activity_and_sleep_log_charts.map{ |a| [a.start_time, a[o]] } } } %>
 
-<%= form_with(model: @activity_and_sleep_log_charts, url: customers_guest_path, local: true) do |f| %>
-  <h4>日付</h4>
-  <%= f.date_field :start_time %>
-  <h4>体重</h4>
-  <%= f.number_field :body_weight %>kg
-  <h4>体温</h4>
-  <%= f.number_field :temperature, step: "0.1" %>℃
-  <h4>脈拍</h4>
-  <%= f.number_field :pulse %>回/分
-  <h4>血圧</h4>
-  <%= f.number_field :max_blood_pressure %>/<%= f.number_field :min_blood_pressure %>mmhg
-  <h4>SPO2</h4>
-  <%= f.number_field :saturation %>%
-
-  <h4>運動時間</h4>
-  <%= f.number_field :exercise_time %>時間
-  <h4>睡眠</h4>
-  <%= f.number_field :hours_of_sleep %>時間
+<%#= form_with(model: @activity_and_sleep_log_charts, url: customers_guest_path, local: true) do |f| %>
+  <h4></h4>
+  <%#= f.date_field :start_time %>
+  <h4></h4>
+  <%#= f.number_field :body_weight %>
 
 
-  <%= f.submit  '登録' %>
+  <h4></h4>
+  <%#= f.number_field :temperature, step: "0.1" %>
 
-<% end %>
+
+
+  <h4></h4>
+  <%#= f.number_field :pulse %>
+  <h4></h4>
+  <%#= f.number_field :max_blood_pressure %><%#= f.number_field :min_blood_pressure %>
+  <h4></h4>
+  <%#= f.number_field :saturation %>
+
+  <h4></h4>
+  <%#= f.number_field :exercise_time %>
+  <h4></h4>
+  <%#= f.number_field :hours_of_sleep %>
+
+  <%#= f.submit  '登録' %>
+
+<%# end %>
