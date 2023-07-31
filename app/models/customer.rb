@@ -15,4 +15,11 @@ class Customer < ApplicationRecord
  has_many :prescription_lists, dependent: :destroy
  has_many :cooking_menu_lists, dependent: :destroy
  has_many :beauty_nutrition_knowledges, dependent: :destroy
+
+
+ #退会ユーザーはログインできなくする
+   #def active_for_authentication?
+     #super && (deleted == true)
+   #end
+
 end

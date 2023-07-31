@@ -1,26 +1,25 @@
-<h1>Public::NextMedicalCheckupDateList#new</h1>
-<p>Find me in app/views/public/next_medical_checkup_date_list/new.html.erb</p>
-#次回受診日
+
+<h2>次回受診日 入力欄</h2>
 
 <%= form_with(model: @next_medical_checkup_date_list, local: true) do |f| %>
 
   <div class="title">
-    <%= f.label :title %>
+    <%= f.label :タイトル %>
     <%= f.text_field :title %>
   </div>
 
     <div class="time">
-    <%= f.label :start_time %>
+    <%= f.label :日時 %>
     <%= f.datetime_select :start_time %>
   </div>
 
   <div class="content">
-    <%= f.label :body %>
+    <%= f.label :備考 %>
     <%= f.text_field :body %>
   </div>
 
 
-  <div class="submit">
+  <div class="登録">
     <%= f.submit %>
   </div>
 

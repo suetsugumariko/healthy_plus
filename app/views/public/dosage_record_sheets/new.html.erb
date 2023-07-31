@@ -1,27 +1,26 @@
-<h1>Public::DosageRecordSheet#new</h1>
-<p>Find me in app/views/public/dosage_record_sheet/new.html.erb</p>
-#服用チェック
+
+<h2>服用チェックカレンダー　入力欄</h2>
 
 
 <%= form_with(model: @dosage_record_sheet, local: true) do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
   <div class="title">
-    <%= f.label :title %>
+    <%= f.label :タイトル %>
     <%= f.text_field :title %>
   </div>
 
     <div class="time">
-    <%= f.label :start_time %>
+    <%= f.label :日時 %>
     <%= f.datetime_select :start_time %>
   </div>
 
   <div class="content">
-    <%= f.label :content %>
+    <%= f.label :備考 %>
     <%= f.text_field :content %>
   </div>
 
 
-  <div class="submit">
+  <div class="登録">
     <%= f.submit %>
   </div>
 
