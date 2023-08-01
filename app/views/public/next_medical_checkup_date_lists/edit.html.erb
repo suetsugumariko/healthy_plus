@@ -1,1 +1,20 @@
 <!--次回受診日カレンダー画面　edmit-->
+
+<h1>受診日カレンダー編集</h1>
+
+<%= form_with model: @next_medical_checkup_date_list do |f| %>
+
+
+  <h4>日時</h4>
+  <%= f.datetime_field :start_time %>
+
+
+  <h4>タイトル</h4>
+  <%= f.text_field :title %>
+
+  <h4>本文</h4>
+  <%= f.text_area :content %>
+
+  <%= f.submit '保存' %>
+
+<% end %>

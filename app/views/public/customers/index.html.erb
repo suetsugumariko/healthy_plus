@@ -40,8 +40,8 @@
 
 <%#= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
 <%#= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
-血圧の内容
-<%= line_chart [:exercise_time, :hours_of_sleep].map{ |o| { name: o.to_s, data: @activity_and_sleep_log_charts.map{ |a| [a.start_time, a[o]] } } } %>
+
+<%#= line_chart [:exercise_time, :hours_of_sleep].map{ |o| { name: o.to_s, data: @activity_and_sleep_log_charts.map{ |a| [a.start_time, a[o]] } } } %>
 
 <%#= form_with(model: @activity_and_sleep_log_charts, url: customers_guest_path, local: true) do |f| %>
   <h4></h4>

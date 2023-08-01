@@ -27,12 +27,19 @@ class Public::NextMedicalCheckupDateListsController < ApplicationController
   end
 
   def edit
+    @next_medical_checkup_date_list = NextMedicalCheckupDateList.find(params[:id])
   end
 
   def update
+     next_medical_checkup_date_list = NextMedicalCheckupDateList.find(params[:id])
+     next_medical_checkup_date_list.update(next_medical_checkup_date_list_params)
+     redirect_to next_medical_checkup_date_lists_path
   end
 
   def destroy
+     next_medical_checkup_date_list = NextMedicalCheckupDateList.find(params[:id])  # データ（レコード）を1件取得
+     next_medical_checkup_date_list.destroy  # データ（レコード）を削除
+    redirect_to next_medical_checkup_date_lists_path
   end
 
 
