@@ -15,11 +15,15 @@ class Public::NextMedicalCheckupDateListsController < ApplicationController
 
   def create
     #データを受け取り新規登録するためのインスタンス作成
-    @next_medical_checkup_date_list = NextMedicalCheckupDateList.new
+    @next_medical_checkup_date_list = current_customer.next_medical_checkup_date_lists.build(next_medical_checkup_date_list_parameter)
     #データをデータベースに保存するためのsaveメソッド実行
-    @next_medical_checkup_date_list.save
-    #リダイレクト
-    redirect_to  next_medical_checkup_date_lists_path
+    if @next_medical_checkup_date_list.save
+      flash[:notice] = "success"
+      redirect_to  next_medical_checkup_date_lists_path
+    else
+      flash.now[:alert] = "failed"
+      render :new
+    end
   end
 
   def edit
@@ -36,7 +40,7 @@ class Public::NextMedicalCheckupDateListsController < ApplicationController
   private
 
   def next_medical_checkup_date_list_parameter
-    params.require(:next_medical_checkup_date_list).permit(:start_time, :title, :body)
+    params.require(:next_medical_checkup_date_list).permit(:start_time, :title, :content)
   end
 
 

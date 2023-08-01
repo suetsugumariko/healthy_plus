@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2023_06_18_055854) do
     t.string "first_name"
     t.string "last_name_kana"
     t.string "first_name_kana"
+    t.boolean "is_deleted", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_customers_on_email", unique: true

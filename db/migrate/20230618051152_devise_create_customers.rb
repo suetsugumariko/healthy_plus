@@ -51,7 +51,8 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
 
 
 
-
+      #退会ステータス
+      t.boolean:is_deleted, default: false
       t.timestamps null: false
     end
 

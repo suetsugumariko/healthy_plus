@@ -1,5 +1,29 @@
 <h2>会員情報編集 <%= resource_name.to_s.humanize %></h2>
 
+
+
+
+<h4>会員情報編集</h4>
+
+<%= form_with(model: @customer, url: customers_edit_path, local: true) do |f| %>
+
+  <h4>名前</h4>
+  姓<%= f.text_field :last_name %>名<%= f.text_field :first_name %>
+  セイ<%= f.text_field :last_name_kana %>メイ<%= f.text_field :first_name_kana %>
+  <h4>メールアドレス</h4>
+  <%= f.email_field :email %>
+
+  <h4>パスワード</h4>
+  <%= f.password_field :encrypted_password %>
+
+
+  <%= f.submit '変更' %>
+
+<% end %>
+
+<h6><%= link_to '退会する方はこちら', customers_unsubscribe_path %></h6>
+
+
 <%= form_with model: @customer, url: edit_customer_registration_path, local: true do |f| %>
   <%#= render "publics/shared/error_messages", resource: resource %>
 

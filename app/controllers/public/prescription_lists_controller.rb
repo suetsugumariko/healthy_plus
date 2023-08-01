@@ -13,7 +13,7 @@ class Public::PrescriptionListsController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     prescription_list.save
     # 4. 処方箋一覧画面へリダイレクト
-    redirect_to 'prescription_lists_path'
+    redirect_to prescription_lists_path
   end
 
   def edit
