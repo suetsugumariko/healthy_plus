@@ -32,7 +32,7 @@ class Public::NextMedicalCheckupDateListsController < ApplicationController
 
   def update
      next_medical_checkup_date_list = NextMedicalCheckupDateList.find(params[:id])
-     next_medical_checkup_date_list.update(next_medical_checkup_date_list_params)
+     next_medical_checkup_date_list.update(next_medical_checkup_date_list_parameter)
      redirect_to next_medical_checkup_date_lists_path
   end
 
