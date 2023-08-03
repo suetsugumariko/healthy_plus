@@ -1,4 +1,4 @@
-<h2>会員情報編集 <%= resource_name.to_s.humanize %></h2>
+<h2>会員情報編集 <%#= resource_name.to_s.humanize %></h2>
 
 
 
@@ -21,7 +21,7 @@
 
 <% end %>
 
-<h6><%= link_to '退会する方はこちら', customers_unsubscribe_path %></h6>
+<h4><%= link_to '退会する方はこちら', customers_unsubscribe_path %></h4>
 
 
 <%#= form_with model: @customer, url: edit_customer_registration_path, local: true do |f| %>

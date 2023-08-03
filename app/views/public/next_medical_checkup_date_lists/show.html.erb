@@ -1,14 +1,14 @@
 <!--登録されたデータの内容を表示-->
-<%= @next_medical_checkup_date_list.inspect %>
+<% @next_medical_checkup_date_list.inspect %>
 
-
+<%#= l current_customer.created_at, format: :short %>
 <h3>服用カレンダーの詳細</h3>
 
 <h2>タイトル</h2>
 <p><%= @next_medical_checkup_date_list.title %></p>
 
-<h2>日時</h2>s
-<p><%= @next_medical_checkup_date_list.start_time %></p>
+<h2>日時</h2>
+<p><%= @next_medical_checkup_date_list.start_time.strftime('%Y年%m月%d日') %></p>
 
 <h2>本文</h2>
 <p><%= @next_medical_checkup_date_list.content %></p>

@@ -65,7 +65,7 @@ devise_for :customers, skip: [:passwords], controllers: {
     end
 
     #次回受診日表
-    resources :next_medical_checkup_date_lists,only: [:index,:new,:create,:edit,:update,:destroy] do
+    resources :next_medical_checkup_date_lists,only: [:index,:new,:show,:create,:edit,:update,:destroy] do
       #get    '/next_medical_checkup_date_lists' => 'next_medical_checkup_date_list#index'
       #post   '/next_medical_checkup_date_lists/new' => 'next_medical_checkup_date_list#new'
       #get    '/next_medical_checkup_date_lists/:id/edit' => 'next_medical_checkup_date_list#edit'

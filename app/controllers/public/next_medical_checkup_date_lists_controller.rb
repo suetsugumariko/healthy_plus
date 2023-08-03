@@ -10,6 +10,7 @@ class Public::NextMedicalCheckupDateListsController < ApplicationController
 
   def show
     @next_medical_checkup_date_list = NextMedicalCheckupDateList.find(params[:id])
+    #current_customer.start_time = Time.now.utc.to_s(:db)
   end
 
 
