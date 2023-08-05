@@ -25,6 +25,13 @@ class Admin::CustomersController < ApplicationController
   def update
   end
 
+  def withdraw
+    @customer = Customer.find_by(name: params[:name])
+    @customer.update(is_valid: false)
+    reset_session
+    redirect_to root_path
+  end
+
   def destroy
     customer = Customer.find(params[:id])  # データ（レコード）を1件取得
     customer.destroy  # データ（レコード）を削除

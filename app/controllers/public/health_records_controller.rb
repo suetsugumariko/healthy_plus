@@ -3,7 +3,8 @@ class Public::HealthRecordsController < ApplicationController
     @health_records = HealthRecord.new
      #グラフに関する内容
     @health_records = HealthRecord.all
-     @customer = Customer.find(1)
+    @customer = Customer.find(1)
+    #@health_records = @customer.health_record_sheets
   end
 
   def new

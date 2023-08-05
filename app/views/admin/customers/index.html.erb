@@ -1,24 +1,18 @@
-
-
 <h2>会員一覧</h2>
 <% @customers.each do |customer| %>
+  <p>会員ID</p>
+    <span><%= customer.id%></span>
 
-<p>会員ID</p>
-<span><%= customer.id%></span>
+  <p>会員名</p>
+    <span><%= customer.last_name%></span><span><%= customer.first_name%></span>
 
-<p>会員名</p>
-<span><%= customer.last_name%></span><span><%= customer.first_name%></span>
+  <p>メールアドレス</p>
+    <span><%= customer.email%></span>
 
-<p>メールアドレス</p>
-<span><%= customer.email%></span>
-
-<p>会員ステータス</p>
-   <% if customer.delete %>
-   <p>有効</p>
+  <p>会員ステータス</p>
+    <% if customer.is_deleted %>
+      <p>有効</p>
     <% else %>
-    <p>退会</p>
+      <p>退会</p>
     <% end %>
-
-
-
 <% end %>

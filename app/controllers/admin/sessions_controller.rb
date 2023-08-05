@@ -3,6 +3,15 @@
 class Admin::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
+
+  def reject_inactive_user
+    @customer = Customer.find_by(name: params[:name])
+    if @user
+      if @customer.valid_password?(params[:password]) && !@customer.is_valid
+        redirect_to new_admin_session_path
+      end
+    end
+  end
   # GET /resource/sign_in
   # def new
   #   super
