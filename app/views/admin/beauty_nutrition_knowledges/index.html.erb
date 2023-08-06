@@ -4,13 +4,13 @@
 <% @beauty_nutrition_knowledges.each do |beauty_nutrition_knowledge| %>
 
   <p>ジャンル名</p>
-  <span><%= link_to beauty_nutrition_knowledge.genre_id,  admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id) %></span>
+  <span><%= link_to beauty_nutrition_knowledge.genre_i18n,  admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge) %></span>
 
    <p>タイトル</p>
   <span><%= link_to beauty_nutrition_knowledge.title,  admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id) %></span>
 
    <p>内容</p>
-  <span><%= link_to beauty_nutrition_knowledge.contrnts,  admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id) %></span>
+  <span><%= link_to beauty_nutrition_knowledge.content,  admin_beauty_nutrition_knowledge_path(beauty_nutrition_knowledge.id) %></span>
 
 
 

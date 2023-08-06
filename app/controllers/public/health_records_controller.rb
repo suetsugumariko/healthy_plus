@@ -8,17 +8,22 @@ class Public::HealthRecordsController < ApplicationController
   end
 
   def new
-    @health_records = HealthRecord.new
+    @health_record = HealthRecord.new
 
   end
 
   def create
     # １.&2. データを受け取り新規登録するためのインスタンス作成
-    health_record = HealthRecord.new(health_record_params)
+    @health_record = current_customer.health_records.new(health_record_params)
     # 3. データをデータベースに保存するためのsaveメソッド実行
-    health_record.save
-    # 4. トップ画面へリダイレクト
-    redirect_to health_records_path
+    if @health_record.save
+      flash[:notice] = "success"
+      # 4. トップ画面へリダイレクト
+      redirect_to health_records_path
+    else
+      flash.now[:alert] = "failed"
+      render :new
+    end
   end
 
   def edit
@@ -34,7 +39,7 @@ class Public::HealthRecordsController < ApplicationController
   private
   # ストロングパラメータ
   def health_record_params
-    params.require(:health_record).permit(:start_time, :body_weight, :temperature, :pulse, :max_blood_pressure, :min_blood_pressure, :saturations)
+    params.require(:health_record).permit(:start_time, :body_weight, :temperature, :pulse, :max_blood_pressure, :min_blood_pressure, :saturation)
   end
 
 end

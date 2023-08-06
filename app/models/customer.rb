@@ -8,7 +8,7 @@ class Customer < ApplicationRecord
 
 
   #1:Nの関係性　アソシエーション（関連付け）
- has_many :health_record_sheets, dependent: :destroy
+ has_many :health_records, dependent: :destroy
  has_many :dosage_record_sheets, dependent: :destroy
  has_many :activity_and_sleep_log_charts, dependent: :destroy
  has_many :next_medical_checkup_date_lists, dependent: :destroy
@@ -23,3 +23,28 @@ class Customer < ApplicationRecord
    #end
 
 end
+
+# == Schema Information
+#
+# Table name: customers
+#
+#  id                     :integer          not null, primary key
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  first_name             :string
+#  first_name_kana        :string
+#  guest                  :string
+#  is_deleted             :boolean          default(FALSE)
+#  last_name              :string
+#  last_name_kana         :string
+#  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+# Indexes
+#
+#  index_customers_on_email                 (email) UNIQUE
+#  index_customers_on_reset_password_token  (reset_password_token) UNIQUE
+#

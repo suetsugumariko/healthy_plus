@@ -17,7 +17,7 @@ class CreateHealthRecords < ActiveRecord::Migration[6.1]
       #最低血圧
       t.integer :min_blood_pressure
       #SPO2
-      t.integer :saturations
+      t.integer :saturation
 
 
 

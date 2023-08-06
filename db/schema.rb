@@ -63,24 +63,20 @@ ActiveRecord::Schema.define(version: 2023_06_18_055854) do
   end
 
   create_table "beauty_nutrition_knowledges", force: :cascade do |t|
-    t.integer "customer_id", null: false
-    t.integer "genre"
+    t.integer "genre", null: false
     t.string "title"
-    t.text "contrnts", default: ""
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_beauty_nutrition_knowledges_on_customer_id"
   end
 
   create_table "cooking_menu_lists", force: :cascade do |t|
-    t.integer "customer_id", null: false
     t.string "title"
     t.string "for_how_meny_people"
-    t.text "material", default: ""
-    t.text "way_of_making", default: ""
+    t.text "material"
+    t.text "way_of_making"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_cooking_menu_lists_on_customer_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -119,7 +115,7 @@ ActiveRecord::Schema.define(version: 2023_06_18_055854) do
     t.integer "pulse"
     t.integer "max_blood_pressure"
     t.integer "min_blood_pressure"
-    t.integer "saturations"
+    t.integer "saturation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_health_records_on_customer_id"
@@ -128,7 +124,7 @@ ActiveRecord::Schema.define(version: 2023_06_18_055854) do
   create_table "next_medical_checkup_date_lists", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.string "title"
-    t.text "content", default: ""
+    t.text "content"
     t.datetime "start_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -140,7 +136,7 @@ ActiveRecord::Schema.define(version: 2023_06_18_055854) do
     t.datetime "start_time"
     t.string "chemical_name"
     t.date "prescription_period"
-    t.text "note", default: ""
+    t.text "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_prescription_lists_on_customer_id"
@@ -149,8 +145,6 @@ ActiveRecord::Schema.define(version: 2023_06_18_055854) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activity_and_sleep_log_charts", "customers"
-  add_foreign_key "beauty_nutrition_knowledges", "customers"
-  add_foreign_key "cooking_menu_lists", "customers"
   add_foreign_key "dosage_record_sheets", "customers"
   add_foreign_key "health_records", "customers"
   add_foreign_key "next_medical_checkup_date_lists", "customers"

@@ -5,16 +5,16 @@
 <% @cooking_menu_list.each do |cooking_menu_list| %>
 
   <p>タイトル</p>
-  <span><%= link_to cooking_menu_list.title, admin_cooking_menu_list_path(admin_cooking_menu_list.id) %></span>
+  <span><%= link_to cooking_menu_list.title, admin_cooking_menu_list_path(cooking_menu_list) %></span>
 
    <p>何人前</p>
-  <span><%= link_to cooking_menu_list.for_how_meny_people, admin_cooking_menu_list_path(admin_cooking_menu_list.id) %></span>
+  <span><%= link_to cooking_menu_list.for_how_meny_people, admin_cooking_menu_list_path(cooking_menu_list) %></span>
 
    <p>材料</p>
-  <span><%= link_to cooking_menu_list.material, admin_cooking_menu_list_path(admin_cooking_menu_list.id) %></span>
+  <span><%= link_to cooking_menu_list.material, admin_cooking_menu_list_path(cooking_menu_list) %></span>
 
    <p>作り方</p>
-  <span><%= link_to cooking_menu_list.way_of_making, admin_cooking_menu_list_path(admin_cooking_menu_list.id) %></span>
+  <span><%= link_to cooking_menu_list.way_of_making, admin_cooking_menu_list_path(cooking_menu_list) %></span>
 
 
 <% end %>

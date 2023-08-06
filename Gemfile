@@ -68,3 +68,6 @@ gem 'devise'
 gem 'devise-i18n'
 
 gem "groupdate"
+
+gem "enum_help"
+gem "annotate"

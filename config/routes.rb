@@ -107,7 +107,7 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
     root 'homes#top'
     resources :customers,only: [:index,:show,:create,:edit,:update,:destroy]
     #管理者　美容、栄養豆知識表
-    resources :beauty_nutrition_knowledges,only: [:index,:new,:create,:show,:edit,:update,:destroy] do
+    resources :beauty_nutrition_knowledges do
       #get  '/admin/beauty_nutrition_knowledges' => 'beauty_nutrition_knowledges#index'
       #get  '/admin/beauty_nutrition_knowledges/new' => 'beauty_nutrition_knowledges#new'
       #post '/admin/beauty_nutrition_knowledges' => 'beauty_nutrition_knowledges#create'

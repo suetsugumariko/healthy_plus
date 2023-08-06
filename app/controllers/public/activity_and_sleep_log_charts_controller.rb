@@ -1,22 +1,25 @@
 class Public::ActivityAndSleepLogChartsController < ApplicationController
   def index
-    @activity_and_sleep_log_charts = ActivityAndSleepLogChart.all
+    @activity_and_sleep_log_charts = current_customer.activity_and_sleep_log_charts.all
   end
 
   def new
     @activity_and_sleep_log_chart = ActivityAndSleepLogChart.new
      #グラフに関する内容
-    @activity_and_sleep_log_charts = ActivityAndSleepLogChart.all
   end
-
 
   def create
     # １.&2. データを受け取り新規登録するためのインスタンス作成
-    activity_and_sleep_log_chart = ActivityAndSleepLogChart.new(activity_and_sleep_log_chart_params)
+    @activity_and_sleep_log_chart = current_customer.activity_and_sleep_log_charts.build(activity_and_sleep_log_chart_params)
     # 3. データをデータベースに保存するためのsaveメソッド実行
-    activity_and_sleep_log_chart.save
-    # 4. トップ画面へリダイレクト
-    redirect_to  activity_and_sleep_log_charts_path
+    if @activity_and_sleep_log_chart.save
+      flash[:notice] = "success"
+      # 4. トップ画面へリダイレクト
+      redirect_to  activity_and_sleep_log_charts_path
+    else
+      flash.now[:alert] = "failed"
+      render :new
+    end
   end
 
   def edit
