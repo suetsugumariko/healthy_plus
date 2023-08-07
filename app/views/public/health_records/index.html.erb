@@ -1,40 +1,17 @@
 
 <p>体調記録表</p>
 
-<p>体重</p>
-<%= line_chart @health_records.map {|o| [o.start_time, o.body_weight]}, colors: ["#b00"] %>
+   <p>体重</p>
+      <%= line_chart @health_records.map {|o| [o.start_time, o.body_weight]}, colors: ["#b00"] %>
 
-<%#= column_chart @health_records.group_by_month(:created_at, last: 7).sum(:body_weight)%>
-<p>体温</p>
-<%= line_chart @health_records.map {|o| [o.start_time, o.temperature]}, colors: ["#b00"] %>
-<%#= column_chart @health_records.group_by_month(:created_at, last: 7).sum(:temperature)%>
-<p>脈拍</p>
-<%= line_chart @health_records.map {|o| [o.start_time, o.pulse]}, colors: ["#b00"] %>
-<%#= column_chart @health_records.group_by_month(:created_at, last: 7).sum(:pulse)%>
-<p>血圧</p>
-<%= line_chart [:max_blood_pressure, :min_blood_pressure].map{ |o| { name: o.to_s, data: @health_records.map{ |a| [a.start_time, a[o]] } } } %>
-<%#= column_chart @health_records.group_by_month(:created_at, last: 7).sum(:max_blood_pressure)%>
-<%#= column_chart @health_records.group_by_month(:created_at, last: 7).sum(:min_blood_pressure)%>
-<p>SPO2</p>
-<%= line_chart @health_records.map {|o| [o.start_time, o.saturation]}, colors: ["#b00"] %>
-<%#= column_chart @health_records.group_by_month(:created_at, last: 7).sum(:saturation)%>
+   <p>体温</p>
+      <%= line_chart @health_records.map {|o| [o.start_time, o.temperature]}, colors: ["#b00"] %>
 
+   <p>脈拍</p>
+      <%= line_chart @health_records.map {|o| [o.start_time, o.pulse]}, colors: ["#b00"] %>
 
-<%#= line_chart @health_records.map { |health_record|
-    {name: health_record.start_time, data: health_record.body_weight }
-} %>
-<%#= line_chart @health_records.map { |health_record|
-    {name: health_record.start_time, data: health_record.temperature }
-} %>
-<%#= line_chart @health_records.map { |health_record|
-    {name: health_record.start_time, data: health_record.pulse }
-} %>
-<%#= line_chart @health_records.map { |health_record|
-    {name: health_record.start_time, data: health_record.max_blood_pressure }
-} %>
-<%#= line_chart @health_records.map { |health_record|
-    {name: health_record.start_time, data: health_record.min_blood_pressure }
-} %>
-<%#= line_chart @health_records.map { |health_record|
-    {name: health_record.start_time, data: health_record.saturation }
-} %>
+   <p>血圧</p>
+      <%= line_chart [:max_blood_pressure, :min_blood_pressure].map{ |o| { name: o.to_s, data: @health_records.map{ |a| [a.start_time, a[o]] } } } %>
+
+   <p>SPO2</p>
+      <%= line_chart @health_records.map {|o| [o.start_time, o.saturation]}, colors: ["#b00"] %>

@@ -3,70 +3,11 @@
 
 
 <p>会員になると、下記のように日々の記録がグラフとして表示されます。</p>
-<p></p>
-<%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:body_weight)%>
-<p></p>
-<%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:temperature)%>
-<p></p>
-<%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:pulse)%>
-<p></p>
-<%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:max_blood_pressure)+(:min_blood_pressure)%>
-<p></p>
-<%#= column_chart @records.group_by_day(:created_at, last: 7).sum(:saturation)%>
 
-<%#= line_chart @records.map { |record|
-    {name: record.start_time, data: record.body_weight }
-} %>
-<%#= line_chart @records.map { |record|
-    {name: record.start_time, data: record.temperature }
-} %>
-<%#= line_chart @records.map { |record|
-    {name: record.start_time, data: record.max_blood_pressure }
-} %>
-<%#= line_chart @records.map { |record|
-    {name: record.start_time, data: record.min_blood_pressure }
-} %>
-<%#= line_chart @records.map { |record|
-    {name: record.start_time, data: record.saturation }
-} %>
-
-<%#= @activity_and_sleep_log_charts.inspect %>
 
 <p>運動時間　記録表</p>
-<%#= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:exercise_time)%>
 <%= line_chart @activity_and_sleep_log_charts.map {|o| [o.start_time, o.exercise_time]}, colors: ["#b00"] %>
+
 <p>睡眠時間　記録表</p>
 <%= line_chart @activity_and_sleep_log_charts.map {|o| [o.start_time, o.hours_of_sleep]}, min: 0, max: 24 %>
 
-<%#= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
-<%#= column_chart @activity_and_sleep_log_charts.group_by_day_of_week(:start_time) %>
-
-<%#= line_chart [:exercise_time, :hours_of_sleep].map{ |o| { name: o.to_s, data: @activity_and_sleep_log_charts.map{ |a| [a.start_time, a[o]] } } } %>
-
-<%#= form_with(model: @activity_and_sleep_log_charts, url: customers_guest_path, local: true) do |f| %>
-  <h4></h4>
-  <%#= f.date_field :start_time %>
-  <h4></h4>
-  <%#= f.number_field :body_weight %>
-
-
-  <h4></h4>
-  <%#= f.number_field :temperature, step: "0.1" %>
-
-
-
-  <h4></h4>
-  <%#= f.number_field :pulse %>
-  <h4></h4>
-  <%#= f.number_field :max_blood_pressure %><%#= f.number_field :min_blood_pressure %>
-  <h4></h4>
-  <%#= f.number_field :saturation %>
-
-  <h4></h4>
-  <%#= f.number_field :exercise_time %>
-  <h4></h4>
-  <%#= f.number_field :hours_of_sleep %>
-
-  <%#= f.submit  '登録' %>
-
-<%# end %>

@@ -1,13 +1,9 @@
 
 
 <p>運動時間　記録表</p>
-
-<%#= column_chart @activity_and_sleep_log_charts.group_by_month(:created_at, format: "%a").count %>
-<%#= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:exercise_time)%>
-<%= line_chart @activity_and_sleep_log_charts.map {|o| [o.start_time, o.exercise_time]}, colors: ["#b00"] %>
+  <%= line_chart @activity_and_sleep_log_charts.map {|o| [o.start_time, o.exercise_time]}, colors: ["#b00"] %>
 
 
 
 <p>睡眠時間　記録表</p>
-<%= line_chart @activity_and_sleep_log_charts.map {|o| [o.start_time, o.hours_of_sleep]}, min: 0, max: 24 %>
-<%#= column_chart @activity_and_sleep_log_charts.group_by_day(:created_at, last: 7).sum(:hours_of_sleep)%>
+  <%= line_chart @activity_and_sleep_log_charts.map {|o| [o.start_time, o.hours_of_sleep]}, min: 0, max: 24 %>

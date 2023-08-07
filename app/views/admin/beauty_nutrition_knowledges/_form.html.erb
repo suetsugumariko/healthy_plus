@@ -1,15 +1,15 @@
 <%= form_with model: [:admin, beauty_nutrition_knowledge], local: true do |f| %>
-  <%= render 'layouts/error_messages', model: f.object %>
+      <%= render 'layouts/error_messages', model: f.object %>
 
-  <%= f.text_field :title %>
+      <%= f.text_field :title %>
 
   <h4>ジャンル名</h4>
-  <%= f.select :genre, BeautyNutritionKnowledge.genres.map {|k, v| [t("enums.beauty_nutrition_knowledge.genre.#{k}"), k ]},
+      <%= f.select :genre, BeautyNutritionKnowledge.genres.map {|k, v| [t("enums.beauty_nutrition_knowledge.genre.#{k}"), k ]},
                                                                     { selected: beauty_nutrition_knowledge.genre, include_blank: "選択してください" },
                                                                     { class: "form-controle" } %>
 
   <h4>内容</h4>
-  <%= f.text_area :content %>
+     <%= f.text_area :content %>
 
-  <%= f.submit message %>
+     <%= f.submit message %>
 <% end %>

@@ -15,7 +15,6 @@
       <tr>
         <td><%= t.title %></td>
         <td><%= t.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-        <td><%#= link_to '詳細', t %></td>
         <td><%= link_to '編集', edit_next_medical_checkup_date_list_path(t.id) %></td>
         <td><%= link_to '削除',next_medical_checkup_date_list_path(t.id), method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>

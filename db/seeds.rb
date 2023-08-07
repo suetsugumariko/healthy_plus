@@ -5,15 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Admin.create!(email: 'admin@admin.com',password: 'password')
+  Admin.create!(email: 'admin@admin.com',password: 'password')
 
-customer = Customer.create!(email: 'sample@sample', password: 'password', first_name: 'hanako', last_name: 'sample')
+  customer = Customer.create!(email: 'sample@sample', password: 'password', first_name: 'hanako', last_name: 'sample')
 
-exercise_times = (0..5)
-hours_of_sleeps = (3..12)
-start_time = Time.zone.now.ago(1.month).beginning_of_day
+    exercise_times = (0..5)
+    hours_of_sleeps = (3..12)
+    start_time = Time.zone.now.ago(1.month).beginning_of_day
 
-30.times do |n|
+    30.times do |n|
   customer.activity_and_sleep_log_charts.create!(start_time: start_time.since(n.day),
                                                  exercise_time: rand(exercise_times),
                                                  hours_of_sleep: rand(hours_of_sleeps))
