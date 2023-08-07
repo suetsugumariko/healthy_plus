@@ -13,17 +13,7 @@
   <%= render "public/shared/error_messages", resource: @customer %>
 
 
-  <div class="field">
-    <%= f.label :名前 %><br />
-    <p>(姓)</p><%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-    <p>(名)</p><%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :フリガナ %><br />
-    <p>(セイ)</p><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
-    <p>(メイ)</p><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
-  </div>
 
   <div class="field">
     <%= f.label :メールアドレス %><br />

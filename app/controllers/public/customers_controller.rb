@@ -43,7 +43,7 @@ class Public::CustomersController < ApplicationController
 
   def withdraw
      @customer = current_customer
-     @customer.update(is_deleted: false)
+     @customer.update(is_deleted: true)
     reset_session
      flash[:notice] = "退会処理を実行いたしました"
     redirect_to root_path
@@ -55,9 +55,9 @@ class Public::CustomersController < ApplicationController
   private
   #ストロングパラメータ
   #formから送られてくるデータの中身
-  def list_params
+  def customer_params
   #require 送られたデータの中からモデル名を指定しデータを絞り込む
   #permit requireで絞り込んだデータの中から保存を許可するカラムを指定する
-    params.require(:customer).permit(:guest, :last_name, :first_name, :last_name_kana, :first_name_kana, :email, :encrypted_password, :start_time, :body_weight, :temperature, :pulse, :max_blood_pressure, :min_blood_pressure, :saturation, :exercise_time, :hours_of_sleep)
+    params.require(:customer).permit(:guest, :last_name, :first_name, :last_name_kana, :first_name_kana, :email, :password, :start_time, :body_weight, :temperature, :pulse, :max_blood_pressure, :min_blood_pressure, :saturation, :exercise_time, :hours_of_sleep)
   end
 end

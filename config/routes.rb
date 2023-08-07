@@ -21,7 +21,7 @@ devise_for :customers, skip: [:passwords], controllers: {
     resources :beauty_nutrition_knowledges,only: [:index,:create,]
     #会員
       get   '/customers/my_page' => 'customers#show'
-      get   '/customers/edit' => 'customers#edit'
+      get   '/customers/edit_page' => 'customers#edit'
       patch '/customers/infomation' => 'customers#update'
       get   '/customers/unsubscribe' => 'customers#unsubscribe'
       patch '/customers/withdraw' => 'customers#withdraw'

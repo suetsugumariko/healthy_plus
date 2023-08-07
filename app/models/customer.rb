@@ -18,9 +18,9 @@ class Customer < ApplicationRecord
 
 
  #退会ユーザーはログインできなくする
-   #def active_for_authentication?
-     #super && (deleted == true)
-   #end
+   def active_for_authentication?
+     super && (self.is_deleted == false)
+   end
 
 end
 

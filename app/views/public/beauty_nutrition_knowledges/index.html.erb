@@ -1,10 +1,10 @@
 
 <h2>美容　豆知識</h2>
 
-<%= @beauty_nutrition_knowledge.each do |beauty_nutrition_knowledge| %>
+<% @beauty_nutrition_knowledge.each do |beauty_nutrition_knowledge| %>
 
 <p>ジャンル名</p>
-<span><%= beauty_nutrition_knowledge.genre_id %></span>
+<span><%= beauty_nutrition_knowledge.genre %></span>
 
 
 <p>タイトル</p>
@@ -12,19 +12,19 @@
 
 
 <p>内容</p>
-<span><%= beauty_nutrition_knowledge.contrnts %></span>
+<span><%= beauty_nutrition_knowledge.content %></span>
 
 
 <h2>栄養　豆知識</h2>
 
 
 <p>ジャンル名</p>
-<span><%= beauty_nutrition_knowledge.genre_id %></span>
+<span><%= beauty_nutrition_knowledge.genre %></span>
 
 <p>タイトル</p>
 <span><%= beauty_nutrition_knowledge.title %></span>
 
 <p>内容</p>
-<span><%= beauty_nutrition_knowledge.contrnts %></span>
+<span><%= beauty_nutrition_knowledge.content %></span>
 
 <% end %>

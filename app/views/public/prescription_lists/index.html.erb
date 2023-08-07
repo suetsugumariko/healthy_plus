@@ -1,15 +1,15 @@
 
 <p>処方薬一覧</p>
 
-<% @prescriptionlist.each do |prescriptionlist| %>
+<% @prescription_lists.each do |prescriptionlist| %>
 
   <p>薬品名</p>
-  <span><%= prescriptionlist.chemical_name %></span>
+  <p><%= prescriptionlist.chemical_name %></p>
 
   <p>処方日付</p>
-  <span><%= prescriptionlist.prescription_period %></span>
+  <p><%= prescriptionlist.prescription_period %></p>
 
   <p>備考</p>
-  <span><%= prescriptionlist.note %></span>
+  <p><%= prescriptionlist.note %></p>
 
 <% end %>
