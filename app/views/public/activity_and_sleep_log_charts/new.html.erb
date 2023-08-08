@@ -1,14 +1,15 @@
 
-<p>活動、睡眠記録表</p>
+<h2>活動、睡眠記録表</h2>
 
 
 <%= form_with(model: @activity_and_sleep_log_chart, local: true) do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
-
- <h4>運動時間</h4>
-  <%= f.number_field :exercise_time %>時間
+  <h4>日付</h4>
+       <%= f.date_field :start_time %>
+  <h4>運動時間</h4>
+       <%= f.number_field :exercise_time %>時間
  <h4>睡眠時間</h4>
-  <%= f.number_field :hours_of_sleep %>時間
+       <%= f.number_field :hours_of_sleep %>時間
 
 
   <%= f.submit  '登録' %>

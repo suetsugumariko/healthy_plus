@@ -1,7 +1,7 @@
 class ActivityAndSleepLogChart < ApplicationRecord
-
 belongs_to :customer
-
+ validates :exercise_time, presence: true, allow_blank: true, numericality: { in: 1..12 }
+ validates :hours_of_sleep, presence: true, allow_blank: true, numericality: { in: 1..24 }
 end
 
 # == Schema Information

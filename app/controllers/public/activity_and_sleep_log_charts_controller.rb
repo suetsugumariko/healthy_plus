@@ -35,6 +35,6 @@ class Public::ActivityAndSleepLogChartsController < ApplicationController
   private
   # ストロングパラメータ
   def activity_and_sleep_log_chart_params
-    params.require(:activity_and_sleep_log_chart).permit(:exercise_time, :hours_of_sleep)
+    params.require(:activity_and_sleep_log_chart).permit(:start_time, :exercise_time, :hours_of_sleep)
   end
 end
