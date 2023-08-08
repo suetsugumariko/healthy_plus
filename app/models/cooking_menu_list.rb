@@ -1,6 +1,9 @@
 class CookingMenuList < ApplicationRecord
 #食事メニュー表
-
+   validates :title, presence: true
+   validates :way_of_making, presence: true
+   validates :material, presence: true
+   validates :for_how_meny_people, presence: true
 end
 
 # == Schema Information

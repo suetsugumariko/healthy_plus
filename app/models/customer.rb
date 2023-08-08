@@ -5,7 +5,7 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
+  validates :email, presence: true
 
   #1:Nの関係性　アソシエーション（関連付け）
  has_many :health_records, dependent: :destroy

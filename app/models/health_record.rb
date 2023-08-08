@@ -4,6 +4,11 @@ class HealthRecord < ApplicationRecord
 
 belongs_to :customer
 
+ validates :title, presence: true
+ validates :content, presence: true
+ validates :title, presence: true
+ validates :content, presence: true
+ 
 end
 
 # == Schema Information
