@@ -1,16 +1,20 @@
 
 
-<h4><%= link_to '会員情報編集',  customers_edit_page_path %></h4>
+       <h4><%= link_to '会員情報編集',  customers_edit_page_path %></h4>
 
-   <h2>マイページ</h2>
 
-   <p>メールアドレス</p>
-   <p><%= @customer.email %></p>
+       <h1><span class="badge bg-secondary">My Page</span></h1>
 
-      <h4><%= link_to '服用チェック表', dosage_record_sheets_path %></h4>
-      <h4><%= link_to '処方薬一覧', new_prescription_list_path %></h4>
-      <h4><%= link_to '次回受診日カレンダー', next_medical_checkup_date_lists_path %></h4>
-      <h4><%= link_to '体調記録表', new_health_record_path%></h4>
-      <h4><%= link_to '活動、睡眠記録表', new_activity_and_sleep_log_chart_path %></h4>
-      <h4><%= link_to '食事メニュー　一覧', cooking_menu_lists_path %></h4>
-      <h4><%= link_to '美容、栄養　豆知識', beauty_nutrition_knowledges_path %></h4>
+       <h4>メールアドレス</h4>
+          <p><%= @customer.email %></p>
+
+
+     <div class="btn-group" role="group" aria-label="Basic outlined example">
+       <button type="button" class="btn btn-outline-primary"><h4><%= link_to '服用チェック表', dosage_record_sheets_path %></h4></button>
+       <button type="button" class="btn btn-outline-primary"> <h4><%= link_to '処方薬一覧', new_prescription_list_path %></h4></button>
+       <button type="button" class="btn btn-outline-primary"><h4><%= link_to '次回受診日カレンダー', next_medical_checkup_date_lists_path %></h4></button>
+       <button type="button" class="btn btn-outline-primary"><h4><%= link_to '体調記録表', new_health_record_path%></h4></button>
+       <button type="button" class="btn btn-outline-primary"><h4><%= link_to '活動、睡眠記録表', new_activity_and_sleep_log_chart_path %></h4></button>
+       <button type="button" class="btn btn-outline-primary"><h4><%= link_to '食事メニュー　一覧', cooking_menu_lists_path %></h4></button>
+       <button type="button" class="btn btn-outline-primary"><h4><%= link_to '美容、栄養　豆知識', beauty_nutrition_knowledges_path %></h4></button>
+     </div>

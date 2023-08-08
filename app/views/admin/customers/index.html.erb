@@ -1,15 +1,16 @@
 <h2>会員一覧</h2>
-<% @customers.each do |customer| %>
-  <p>会員ID</p>
-    <span><%= customer.id%></span>
+   <% @customers.each do |customer| %>
+     <ul class="list-group">
+        <li class="list-group-item">会員ID <span><%= customer.id%></span></li>
+        <li class="list-group-item">メールアドレス<span><%= customer.email%></span></li>
+        <li class="list-group-item">会員ステータス
+                                      <% if customer.is_deleted %>
+                                   <p>退会</p>
+                                      <% else %>
+                                   <p>有効</p>
+                                      <% end %></li>
 
-  <p>メールアドレス</p>
-    <span><%= customer.email%></span>
+     </ul>
 
-  <p>会員ステータス</p>
-    <% if customer.is_deleted %>
-      <p>退会</p>
-    <% else %>
-      <p>有効</p>
-    <% end %>
-<% end %>
+
+   <% end %>

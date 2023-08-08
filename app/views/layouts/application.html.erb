@@ -6,40 +6,35 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
     <% if customer_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
-      </li>
-       <li>
-        <%= link_to "マイページ", customers_my_page_path %>
-      </li>
-      <li>
-        <%= link_to "about", about_path %>
-      </li>
+       <nav aria-label="breadcrumb">
+         <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></a></li>
+            <li class="breadcrumb-item"><a href="#"><%= link_to "マイページ", customers_my_page_path %></a></li>
+            <li class="breadcrumb-item active" aria-current="page"><%= link_to "about", about_path %></li>
+         </ol>
+       </nav>
     <% elsif admin_signed_in? %>
-      <li>
-        <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %>
-      </li>
-      <li>
-        <%= link_to "管理者トップページ", admin_root_path %>
-      </li>
-
+       <nav aria-label="breadcrumb">
+           <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#"><%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %></a></li>
+              <li class="breadcrumb-item active" aria-current="page"> <%= link_to "管理者トップページ", admin_root_path %></li>
+           </ol>
+       </nav>
     <% else %>
-      <li>
-        <%= link_to "新規登録", new_customer_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_customer_session_path %>
-      </li>
-      <li>
-        <%= link_to "about", about_path %>
-      </li>
+      <nav aria-label="breadcrumb">
+         <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><%= link_to "新規登録", new_customer_registration_path %></a></li>
+            <li class="breadcrumb-item"><a href="#"><%= link_to "ログイン", new_customer_session_path %></a></li>
+            <li class="breadcrumb-item active" aria-current="page"><%= link_to "about", about_path %></li>
+         </ol>
+       </nav>
     <% end %>
 
 
