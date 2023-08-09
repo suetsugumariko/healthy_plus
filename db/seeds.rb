@@ -18,3 +18,5 @@
                                                  exercise_time: rand(exercise_times),
                                                  hours_of_sleep: rand(hours_of_sleeps))
 end
+
+現在、

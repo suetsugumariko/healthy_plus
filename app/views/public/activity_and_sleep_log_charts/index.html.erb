@@ -1,4 +1,4 @@
-
+<h4><span class="badge badge-warning"><%= link_to '活動、睡眠　新規登録画面へ',  new_activity_and_sleep_log_chart_path%></span></h4>
 
 <p>運動時間　記録表</p>
   <%= line_chart @activity_and_sleep_log_charts.map {|o| [o.start_time, o.exercise_time]}, colors: ["#b00"] %>

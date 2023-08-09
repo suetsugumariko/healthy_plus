@@ -1,15 +1,14 @@
 
-<h2>処方薬一覧</h2>
+<h2>薬の記録一覧</h2>
+<h4><span class="badge badge-warning"><%= link_to '薬の記録 新規登録画面へ', new_prescription_list_path%></span></h4>
 
 <% @prescription_lists.each do |prescriptionlist| %>
 
-  <p>薬品名</p>
-  <p><%= prescriptionlist.chemical_name %></p>
+     <ul class="list-group">
+        <li class="list-group-item">薬品名 <span><%= prescriptionlist.chemical_name %></span></li>
+        <li class="list-group-item">日付<span><%= prescriptionlist.prescription_period %></span></li>
+        <li class="list-group-item">備考<span><%= prescriptionlist.note %></span></li>
 
-  <p>処方日付</p>
-  <p><%= prescriptionlist.prescription_period %></p>
-
-  <p>備考</p>
-  <p><%= prescriptionlist.note %></p>
+     </ul>
 
 <% end %>

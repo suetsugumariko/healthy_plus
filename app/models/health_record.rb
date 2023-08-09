@@ -4,12 +4,12 @@ class HealthRecord < ApplicationRecord
 
 belongs_to :customer
 
- validates :body_weight, presence: true, allow_blank: true, numericality: { in: 10..120 }
- validates :max_blood_pressure, presence: true, allow_blank: true, numericality: { in: 80..200 }
- validates :min_blood_pressure, presence: true, allow_blank: true, numericality: { in: 40..120 }
- validates :pulse, presence: true, allow_blank: true, numericality: { in: 50..120 }
- validates :saturation, presence: true, allow_blank: true, numericality: { in: 90..100 }
- validates :temperature, presence: true, allow_blank: true, numericality: { in: 35..40 }
+ validates :body_weight, presence: true, allow_blank: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 120 }
+ validates :max_blood_pressure, presence: true, allow_blank: true, numericality: { greater_than_or_equal_to: 80, less_than_or_equal_to: 200}
+ validates :min_blood_pressure, presence: true, allow_blank: true, numericality: { greater_than_or_equal_to: 40, less_than_or_equal_to: 120 }
+ validates :pulse, presence: true, allow_blank: true, numericality: { greater_than_or_equal_to: 50, less_than_or_equal_to: 120 }
+ validates :saturation, presence: true, allow_blank: true, numericality: { greater_than_or_equal_to: 90, less_than_or_equal_to: 100 }
+ validates :temperature, presence: true, allow_blank: true, numericality: { greater_than_or_equal_to: 35, less_than_or_equal_to: 40 }
 end
 
 # == Schema Information

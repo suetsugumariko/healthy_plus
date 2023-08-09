@@ -1,5 +1,6 @@
 
-<p>体調記録表</p>
+<h2>体調記録表</h2>
+<h4><span class="badge badge-warning"><%= link_to '体調記録一覧表へ', health_records_path%> </span></h4>
 
 <%= form_with model: @health_record, url: '/health_records', method: :post do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>

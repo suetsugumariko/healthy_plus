@@ -3,6 +3,14 @@ class Public::HealthRecordsController < ApplicationController
     @health_records = HealthRecord.new
      #グラフに関する内容
     @health_records = HealthRecord.all
+    #@health_records = HealthRecord.all.map do |record|
+    #byebug
+      #record.attributes.tap do |attrs|
+       #if record.start_time
+       #  attrs["start_time"] = record.start_time.strftime('%a, %d %b %Y %H:%M:%S')
+      # end
+     # end
+    #end
     @customer = Customer.find(1)
     #@health_records = @customer.health_record_sheets
   end

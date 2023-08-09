@@ -1,17 +1,19 @@
 
-<p>体調記録表</p>
+<h2>体調記録表</h2>
+<h4><span class="badge badge-warning"><%= link_to '体調記録　新規登録画面へ', new_health_record_path%></span></h4>
 
    <p>体重</p>
       <%= line_chart @health_records.map {|o| [o.start_time, o.body_weight]}, colors: ["#b00"] %>
-
+      <%#= line_chart @health_records.map {|o| [o["start_time"], o["body_weight"]]}, colors: ["#b00"] %>
    <p>体温</p>
       <%= line_chart @health_records.map {|o| [o.start_time, o.temperature]}, colors: ["#b00"] %>
-
+      <%#= line_chart @health_records.map {|o| [o["start_time"], o["temperature"]]}, colors: ["#b00"] %>
    <p>脈拍</p>
       <%= line_chart @health_records.map {|o| [o.start_time, o.pulse]}, colors: ["#b00"] %>
-
+      <%#= line_chart @health_records.map {|o| [o["start_time"], o["pulse"]]}, colors: ["#b00"] %>
    <p>血圧</p>
       <%= line_chart [:max_blood_pressure, :min_blood_pressure].map{ |o| { name: o.to_s, data: @health_records.map{ |a| [a.start_time, a[o]] } } } %>
 
    <p>SPO2</p>
       <%= line_chart @health_records.map {|o| [o.start_time, o.saturation]}, colors: ["#b00"] %>
+      <%#= line_chart @health_records.map {|o| [o["start_time"], o["saturation"]]}, colors: ["#b00"] %>

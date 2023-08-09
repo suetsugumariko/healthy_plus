@@ -1,5 +1,5 @@
 class Public::CustomersController < ApplicationController
-  before_action :authenticate_customer!
+  before_action :authenticate_customer!, except: :index
   #before_action :set_current_customer
 
   def new
@@ -7,7 +7,7 @@ class Public::CustomersController < ApplicationController
 
   #サンプルデータ
   def index
-     @customer = Customer.find(1)
+     @customer = Customer.find(6)
      #@customer = Customer.all
      #グラフに関する内容
      #@records = HealthRecord.all

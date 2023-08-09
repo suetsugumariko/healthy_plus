@@ -1,9 +1,10 @@
 
-<h2>処方薬 など定期服用中の内容記録</h2>
+<h2>薬 の新規登録画面</h2>
+<h4><span class="badge badge-warning"><%= link_to '薬の記録一覧画面へ', prescription_lists_path%></span></h4>
 <%= form_with model: @prescription_list, method: :post do |f| %>
   <h4>薬品名</h4>
   <%= f.text_field :chemical_name %>
-  <h4>処方日付</h4>
+  <h4>日付</h4>
   <%= f.date_field :prescription_period %>
   <h4>備考</h4>
   <%= f.text_area :note %>
