@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-  Admin.create!(email: 'admin@admin.com',password: 'password')
+  Admin.create!(email: 'admin.healthyplus@admin.com',password: 'healthy202308plus')
 
   customer = Customer.create!(email: 'sample@sample', password: 'password', first_name: 'hanako', last_name: 'sample')
 
@@ -19,4 +19,3 @@
                                                  hours_of_sleep: rand(hours_of_sleeps))
 end
 
-現在、
