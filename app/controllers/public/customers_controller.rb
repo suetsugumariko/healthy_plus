@@ -33,6 +33,12 @@ class Public::CustomersController < ApplicationController
 
   def update
     customer = current_customer
+    if params[:customer][:password].empty?
+      params[:customer].delete("password")
+    end
+    if params[:customer][:email].empty?
+      params[:customer].delete("email")
+    end
     customer.update(customer_params)
     #マイページにリダイレクト
     redirect_to customers_my_page_path
