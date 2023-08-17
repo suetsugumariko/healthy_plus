@@ -7,7 +7,7 @@ class Public::CustomersController < ApplicationController
 
   #サンプルデータ
   def index
-     @customer = Customer.find(6)
+     @customer = Customer.find_by(email: 'sample@sample')
      #@customer = Customer.all
      #グラフに関する内容
      #@records = HealthRecord.all
