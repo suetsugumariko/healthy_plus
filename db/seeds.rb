@@ -9,7 +9,7 @@
 
   customer = Customer.create!(email: 'sample@sample', password: 'password', first_name: 'hanako', last_name: 'sample')
 
-    exercise_times = (0..5)
+    exercise_times = (1..5)
     hours_of_sleeps = (3..12)
     start_time = Time.zone.now.ago(1.month).beginning_of_day
 
