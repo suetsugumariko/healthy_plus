@@ -33,12 +33,12 @@ class DeviseCreateAdmins < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
 
 
-       #管理者ID
-      #id
-      #メールアドレス
-      #t.string :email
-      #パスワード
-      #t.string :encrypted_password
+      # 管理者ID
+      # id
+      # メールアドレス
+      # t.string :email
+      # パスワード
+      # t.string :encrypted_password
 
 
       t.timestamps null: false

@@ -14,7 +14,7 @@ class Public::PrescriptionListsController < ApplicationController
     if @prescription_list.save
       flash[:notice] = "success"
       # 4. トップ画面へリダイレクト
-      redirect_to  prescription_lists_path
+      redirect_to prescription_lists_path
     else
       flash.now[:alert] = "failed"
       render :new
@@ -31,9 +31,8 @@ class Public::PrescriptionListsController < ApplicationController
   end
 
   private
-  # ストロングパラメータ
-  def prescription_list_params
-    params.require(:prescription_list).permit(:chemical_name, :prescription_period, :note)
-  end
-
+    # ストロングパラメータ
+    def prescription_list_params
+      params.require(:prescription_list).permit(:chemical_name, :prescription_period, :note)
+    end
 end

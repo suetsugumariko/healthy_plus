@@ -12,12 +12,12 @@ class Public::DosageRecordSheetsController < ApplicationController
   end
 
   def create
-    #データを受け取り新規登録するためのインスタンス作成
+    # データを受け取り新規登録するためのインスタンス作成
     @dosage_record_sheet = current_customer.dosage_record_sheets.build(dosage_record_sheet_parameter)
-    #データをデータベースに保存するためのsaveメソッド実行
+    # データをデータベースに保存するためのsaveメソッド実行
     if @dosage_record_sheet.save
       flash[:notice] = "success"
-      redirect_to  dosage_record_sheets_path
+      redirect_to dosage_record_sheets_path
     else
       flash.now[:alert] = "failed"
       render :new
@@ -34,9 +34,7 @@ class Public::DosageRecordSheetsController < ApplicationController
   end
 
   private
-
-  def dosage_record_sheet_parameter
-    params.require(:dosage_record_sheet).permit(:start_time, :title, :content)
-  end
-
+    def dosage_record_sheet_parameter
+      params.require(:dosage_record_sheet).permit(:start_time, :title, :content)
+    end
 end

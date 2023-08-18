@@ -7,12 +7,12 @@ class Admin::CustomersController < ApplicationController
   end
 
   def create
-    #データを受け取り新規登録するためのインスタンス作成
+    # データを受け取り新規登録するためのインスタンス作成
     @customer = Customer.new(customer_params)
-    #データをデータベースに保存するためのsaveメソッド実行
+    # データをデータベースに保存するためのsaveメソッド実行
     customer.save
-    #リダイレクト
-    redirect_to  admin_customers_path
+    # リダイレクト
+    redirect_to admin_customers_path
   end
 
   def show
@@ -39,7 +39,7 @@ class Admin::CustomersController < ApplicationController
   end
 
   private
-  def customer_params
-    params.require(:customer).permit(:guest, :last_name, :first_name, :email)
-  end
+    def customer_params
+      params.require(:customer).permit(:guest, :last_name, :first_name, :email)
+    end
 end

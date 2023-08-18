@@ -18,9 +18,9 @@ class Admin::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  #def create
+  # def create
   #  super
-  #end
+  # end
 
   # DELETE /resource/sign_out
   # def destroy
@@ -34,12 +34,12 @@ class Admin::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 
-  #def after_sign_in_path_for(resource)
-    #byebug
+  # def after_sign_in_path_for(resource)
+  # byebug
   #  redirect_to admin_root_path and return
-  #end
+  # end
 
-  #def after_sign_out_path_for(resource)
+  # def after_sign_out_path_for(resource)
   #  root_path
-  #end
+  # end
 end

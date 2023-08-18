@@ -1,23 +1,22 @@
 class Public::HealthRecordsController < ApplicationController
   def index
     @health_records = HealthRecord.new
-     #グラフに関する内容
+    # グラフに関する内容
     @health_records = HealthRecord.all
-    #@health_records = HealthRecord.all.map do |record|
-    #byebug
-      #record.attributes.tap do |attrs|
-       #if record.start_time
-       #  attrs["start_time"] = record.start_time.strftime('%a, %d %b %Y %H:%M:%S')
-      # end
-     # end
-    #end
+    # @health_records = HealthRecord.all.map do |record|
+    # byebug
+    # record.attributes.tap do |attrs|
+    # if record.start_time
+    #  attrs["start_time"] = record.start_time.strftime('%a, %d %b %Y %H:%M:%S')
+    # end
+    # end
+    # end
     @customer = Customer.find(1)
-    #@health_records = @customer.health_record_sheets
+    # @health_records = @customer.health_record_sheets
   end
 
   def new
     @health_record = HealthRecord.new
-
   end
 
   def create
@@ -45,9 +44,8 @@ class Public::HealthRecordsController < ApplicationController
 
 
   private
-  # ストロングパラメータ
-  def health_record_params
-    params.require(:health_record).permit(:start_time, :body_weight, :temperature, :pulse, :max_blood_pressure, :min_blood_pressure, :saturation)
-  end
-
+    # ストロングパラメータ
+    def health_record_params
+      params.require(:health_record).permit(:start_time, :body_weight, :temperature, :pulse, :max_blood_pressure, :min_blood_pressure, :saturation)
+    end
 end

@@ -5,7 +5,7 @@ class Public::ActivityAndSleepLogChartsController < ApplicationController
 
   def new
     @activity_and_sleep_log_chart = ActivityAndSleepLogChart.new
-     #グラフに関する内容
+    # グラフに関する内容
   end
 
   def create
@@ -15,7 +15,7 @@ class Public::ActivityAndSleepLogChartsController < ApplicationController
     if @activity_and_sleep_log_chart.save
       flash[:notice] = "success"
       # 4. トップ画面へリダイレクト
-      redirect_to  activity_and_sleep_log_charts_path
+      redirect_to activity_and_sleep_log_charts_path
     else
       flash.now[:alert] = "failed"
       render :new
@@ -33,8 +33,8 @@ class Public::ActivityAndSleepLogChartsController < ApplicationController
 
 
   private
-  # ストロングパラメータ
-  def activity_and_sleep_log_chart_params
-    params.require(:activity_and_sleep_log_chart).permit(:start_time, :exercise_time, :hours_of_sleep)
-  end
+    # ストロングパラメータ
+    def activity_and_sleep_log_chart_params
+      params.require(:activity_and_sleep_log_chart).permit(:start_time, :exercise_time, :hours_of_sleep)
+    end
 end

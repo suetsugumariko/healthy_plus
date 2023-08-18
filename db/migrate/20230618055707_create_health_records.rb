@@ -3,20 +3,20 @@ class CreateHealthRecords < ActiveRecord::Migration[6.1]
     create_table :health_records do |t|
       t.references :customer, null: false, foreign_key: true
 
-      #体調管理ID
-      #日付
+      # 体調管理ID
+      # 日付
       t.datetime :start_time
-      #体重
+      # 体重
       t.float :body_weight
-      #体温
+      # 体温
       t.float :temperature
-      #脈拍
+      # 脈拍
       t.integer :pulse
-      #最高血圧
+      # 最高血圧
       t.integer :max_blood_pressure
-      #最低血圧
+      # 最低血圧
       t.integer :min_blood_pressure
-      #SPO2
+      # SPO2
       t.integer :saturation
 
 

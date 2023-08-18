@@ -8,14 +8,14 @@ class Admin::BeautyNutritionKnowledgesController < ApplicationController
   end
 
   def create
-     # １.&2. データを受け取り新規登録するためのインスタンス作成
+    # １.&2. データを受け取り新規登録するためのインスタンス作成
     @beauty_nutrition_knowledge = BeautyNutritionKnowledge.new(beauty_nutrition_knowledge_params)
 
     # 3. データをデータベースに保存するためのsaveメソッド実行
     if @beauty_nutrition_knowledge.save
       flash[:notice] = "success"
-    # 4. 詳細画面へリダイレクト
-      redirect_to  admin_beauty_nutrition_knowledges_path
+      # 4. 詳細画面へリダイレクト
+      redirect_to admin_beauty_nutrition_knowledges_path
     else
       flash.now[:alert] = "failed"
       render :new
@@ -23,11 +23,11 @@ class Admin::BeautyNutritionKnowledgesController < ApplicationController
   end
 
   def show
-     @beauty_nutrition_knowledge = BeautyNutritionKnowledge.find(params[:id])
+    @beauty_nutrition_knowledge = BeautyNutritionKnowledge.find(params[:id])
   end
 
   def edit
-      @beauty_nutrition_knowledge = BeautyNutritionKnowledge.find(params[:id])
+    @beauty_nutrition_knowledge = BeautyNutritionKnowledge.find(params[:id])
   end
 
   def update
@@ -44,8 +44,8 @@ class Admin::BeautyNutritionKnowledgesController < ApplicationController
 
 
   private
-  # ストロングパラメータ
-  def beauty_nutrition_knowledge_params
-    params.require(:beauty_nutrition_knowledge).permit(:title, :genre, :content)
-  end
+    # ストロングパラメータ
+    def beauty_nutrition_knowledge_params
+      params.require(:beauty_nutrition_knowledge).permit(:title, :genre, :content)
+    end
 end

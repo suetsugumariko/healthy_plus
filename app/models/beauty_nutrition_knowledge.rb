@@ -1,5 +1,5 @@
 class BeautyNutritionKnowledge < ApplicationRecord
-#美容、栄養豆知識表
+  # 美容、栄養豆知識表
   enum genre: { beauty: 0, nutrition: 1 }
   validates :title, presence: true
   validates :content, presence: true

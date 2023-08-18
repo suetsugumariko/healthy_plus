@@ -1,10 +1,9 @@
 class NextMedicalCheckupDateList < ApplicationRecord
-#次回受診日表
-belongs_to :customer
+  # 次回受診日表
+  belongs_to :customer
 
-validates :title, presence: true, allow_blank: true
-validates :content, presence: true, allow_blank: true
-
+  validates :title, presence: true, allow_blank: true
+  validates :content, presence: true, allow_blank: true
 end
 
 # == Schema Information
