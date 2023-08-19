@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HealthRecord < ApplicationRecord
   # 体調記録表
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateNextMedicalCheckupDateLists < ActiveRecord::Migration[6.1]
   def change
     create_table :next_medical_checkup_date_lists do |t|

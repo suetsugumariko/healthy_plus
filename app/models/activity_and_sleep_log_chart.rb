@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ActivityAndSleepLogChart < ApplicationRecord
   belongs_to :customer
   validates :exercise_time, presence: true, allow_blank: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 20 }

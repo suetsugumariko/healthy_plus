@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!, except: :index
   # before_action :set_current_customer

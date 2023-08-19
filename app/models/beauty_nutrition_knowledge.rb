@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BeautyNutritionKnowledge < ApplicationRecord
   # 美容、栄養豆知識表
   enum genre: { beauty: 0, nutrition: 1 }

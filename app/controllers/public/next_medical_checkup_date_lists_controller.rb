@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Public::NextMedicalCheckupDateListsController < ApplicationController
   def index
     @next_medical_checkup_date_list = current_customer.next_medical_checkup_date_lists

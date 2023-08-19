@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Public::DosageRecordSheetsController < ApplicationController
   def index
     @dosage_record_sheet = current_customer.dosage_record_sheets

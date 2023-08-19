@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   # devise利用の機能（ユーザー登録、ログイン認証など）が行われる前に下記のメソッドが実行される
   before_action :configure_permitted_parameters, if: :devise_controller?

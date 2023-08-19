@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CookingMenuList < ApplicationRecord
   # 食事メニュー表
   validates :title, presence: true

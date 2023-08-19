@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Customer < ApplicationRecord
   # 会員
   # Include default devise modules. Others available are:

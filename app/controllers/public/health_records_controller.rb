@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Public::HealthRecordsController < ApplicationController
   def index
     @health_records = HealthRecord.new

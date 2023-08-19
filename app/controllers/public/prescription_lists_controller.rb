@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Public::PrescriptionListsController < ApplicationController
   def index
     @prescription_lists = current_customer.prescription_lists

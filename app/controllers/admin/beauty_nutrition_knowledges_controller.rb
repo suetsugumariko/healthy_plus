@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::BeautyNutritionKnowledgesController < ApplicationController
   def index
     @beauty_nutrition_knowledges = BeautyNutritionKnowledge.all

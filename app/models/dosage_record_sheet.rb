@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DosageRecordSheet < ApplicationRecord
   # 服用記録表
   belongs_to :customer

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Public::ActivityAndSleepLogChartsController < ApplicationController
   def index
     @activity_and_sleep_log_charts = current_customer.activity_and_sleep_log_charts
