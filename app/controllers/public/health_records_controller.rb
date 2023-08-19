@@ -13,7 +13,7 @@ class Public::HealthRecordsController < ApplicationController
     # end
     # end
     # end
-    @customer = Customer.find(1)
+    #@customer = Customer.find(1)
     # @health_records = @customer.health_record_sheets
   end
 
