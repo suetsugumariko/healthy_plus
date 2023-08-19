@@ -2,7 +2,7 @@ class Public::HealthRecordsController < ApplicationController
   def index
     @health_records = HealthRecord.new
     # グラフに関する内容
-    @health_records = HealthRecord.all
+    @health_records = current_customer.health_records
     # @health_records = HealthRecord.all.map do |record|
     # byebug
     # record.attributes.tap do |attrs|

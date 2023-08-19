@@ -1,6 +1,6 @@
 class Public::ActivityAndSleepLogChartsController < ApplicationController
   def index
-    @activity_and_sleep_log_charts = current_customer.activity_and_sleep_log_charts.all
+    @activity_and_sleep_log_charts = current_customer.activity_and_sleep_log_charts
   end
 
   def new

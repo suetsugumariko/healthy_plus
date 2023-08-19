@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # 顧客用
   # URL /customers/sign_in ...

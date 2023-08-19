@@ -1,6 +1,6 @@
 class Public::PrescriptionListsController < ApplicationController
   def index
-    @prescription_lists = current_customer.prescription_lists.all
+    @prescription_lists = current_customer.prescription_lists
   end
 
   def new
