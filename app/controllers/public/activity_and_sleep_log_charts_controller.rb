@@ -2,12 +2,12 @@
 
 class Public::ActivityAndSleepLogChartsController < ApplicationController
   def index
+    #活動、睡眠記録表　各会員のデータを表示
     @activity_and_sleep_log_charts = current_customer.activity_and_sleep_log_charts
   end
 
   def new
     @activity_and_sleep_log_chart = ActivityAndSleepLogChart.new
-    # グラフに関する内容
   end
 
   def create

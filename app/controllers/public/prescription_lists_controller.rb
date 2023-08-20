@@ -2,6 +2,7 @@
 
 class Public::PrescriptionListsController < ApplicationController
   def index
+    #処方薬の一覧表　各会員のデータの表示
     @prescription_lists = current_customer.prescription_lists
   end
 

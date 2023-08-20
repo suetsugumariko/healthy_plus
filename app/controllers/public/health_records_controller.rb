@@ -2,6 +2,7 @@
 
 class Public::HealthRecordsController < ApplicationController
   def index
+    #体調記録表
     @health_records = HealthRecord.new
     # グラフに関する内容
     @health_records = current_customer.health_records

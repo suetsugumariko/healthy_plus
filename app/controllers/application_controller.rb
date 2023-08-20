@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # ログアウト後、Aboutページへ遷移するよう設定
+  # ログアウト後、rootへ遷移するよう設定
   def after_sign_out_path_for(resource)
     root_path
   end

@@ -2,6 +2,7 @@
 
 class Public::DosageRecordSheetsController < ApplicationController
   def index
+    #服用カレンダー機能　各会員のデータ表示
     @dosage_record_sheet = current_customer.dosage_record_sheets
   end
 

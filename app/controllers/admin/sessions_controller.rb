@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+#管理者　ログイン
 class Admin::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 

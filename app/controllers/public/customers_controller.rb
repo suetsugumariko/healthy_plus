@@ -7,8 +7,9 @@ class Public::CustomersController < ApplicationController
   def new
   end
 
-  # サンプルデータ
+
   def index
+    # サンプルデータ表示
     @customer = Customer.find_by(email: "sample@sample")
     # @customer = Customer.all
     # グラフに関する内容

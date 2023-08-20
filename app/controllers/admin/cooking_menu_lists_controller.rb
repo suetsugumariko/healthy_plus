@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+#食事メニュー
 class Admin::CookingMenuListsController < ApplicationController
   def index
     @cooking_menu_list = CookingMenuList.all

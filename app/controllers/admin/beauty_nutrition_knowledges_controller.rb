@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+#美容,栄養の豆知識
 class Admin::BeautyNutritionKnowledgesController < ApplicationController
   def index
     @beauty_nutrition_knowledges = BeautyNutritionKnowledge.all

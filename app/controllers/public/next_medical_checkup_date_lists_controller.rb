@@ -2,6 +2,7 @@
 
 class Public::NextMedicalCheckupDateListsController < ApplicationController
   def index
+    #次回受診日カレンダー機能　各会員のデータ表示
     @next_medical_checkup_date_list = current_customer.next_medical_checkup_date_lists
   end
 
