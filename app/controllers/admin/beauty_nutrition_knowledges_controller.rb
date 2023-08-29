@@ -2,6 +2,7 @@
 
 #美容,栄養の豆知識
 class Admin::BeautyNutritionKnowledgesController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @beauty_nutrition_knowledges = BeautyNutritionKnowledge.all
   end

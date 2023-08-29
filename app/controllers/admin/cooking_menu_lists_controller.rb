@@ -2,6 +2,7 @@
 
 #食事メニュー
 class Admin::CookingMenuListsController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @cooking_menu_list = CookingMenuList.all
   end
