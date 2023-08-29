@@ -11,7 +11,14 @@ class Public::DosageRecordSheetsController < ApplicationController
   end
 
   def show
-    @dosage_record_sheet = DosageRecordSheet.find(params[:id])
+    @dosage_record_sheet = DosageRecordSheet.find_by(id: params[:id])
+    if @dosage_record_sheet == nil
+      redirect_to dosage_record_sheets_path
+      return
+    end
+    if @dosage_record_sheet.customer!= current_customer
+      redirect_to dosage_record_sheets_path
+    end
   end
 
   def create

@@ -12,7 +12,14 @@ class Public::NextMedicalCheckupDateListsController < ApplicationController
 
 
   def show
-    @next_medical_checkup_date_list = NextMedicalCheckupDateList.find(params[:id])
+    @next_medical_checkup_date_list = NextMedicalCheckupDateList.find_by(id: params[:id])
+     if @next_medical_checkup_date_list == nil
+      redirect_to next_medical_checkup_date_lists_path
+      return
+     end
+     if @next_medical_checkup_date_list.customer!= current_customer
+      redirect_to next_medical_checkup_date_lists_path
+     end
     # current_customer.start_time = Time.now.utc.to_s(:db)
   end
 
