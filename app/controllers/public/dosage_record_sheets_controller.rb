@@ -11,9 +11,12 @@ class Public::DosageRecordSheetsController < ApplicationController
   end
 
   def show
+    #idという条件指定してfind_byと入力しidにparams渡すとコードが存在している時、redirect_toする
     @dosage_record_sheet = DosageRecordSheet.find_by(id: params[:id])
+    #nilだった場合、redirect_toで返す
     if @dosage_record_sheet == nil
       redirect_to dosage_record_sheets_path
+      #メソッド抜ける　customerが違うとレコード取れてビューのレンダーが行われる
       return
     end
     if @dosage_record_sheet.customer!= current_customer

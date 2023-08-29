@@ -12,9 +12,12 @@ class Public::NextMedicalCheckupDateListsController < ApplicationController
 
 
   def show
+    #idという条件指定してfind_byと入力しidにparams渡すとコードが存在している時、redirect_toする
     @next_medical_checkup_date_list = NextMedicalCheckupDateList.find_by(id: params[:id])
+    #nilだった場合、redirect_toで返す
      if @next_medical_checkup_date_list == nil
       redirect_to next_medical_checkup_date_lists_path
+       #メソッド抜ける　customerが違うとレコード取れてビューのレンダーが行われる
       return
      end
      if @next_medical_checkup_date_list.customer!= current_customer
