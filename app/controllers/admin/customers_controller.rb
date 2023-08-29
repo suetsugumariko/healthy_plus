@@ -2,6 +2,7 @@
 
 #会員一覧画面（管理者用）
 class Admin::CustomersController < ApplicationController
+  #adminでログインしているのかをチェックしている　管理者以外は閲覧できないようにするもの
   before_action :authenticate_admin!
   def index
     @customers = Customer.all

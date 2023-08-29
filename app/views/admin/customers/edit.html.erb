@@ -2,9 +2,6 @@
 <h2>会員情報編集</h2>
 <%= form_with model: @customer do |f| %>
 
-  <h4>会員氏名</h4>
-  <%= f.text_field :last_name %><%= f.text_field :first_name %>
-
   <h4>メールアドレス</h4>
   <%= f.email_field :email %>
 
