@@ -9,8 +9,8 @@
                                       <% else %>
                                    <p>有効</p>
                                       <% end %></li>
-        <h4><%#= link_to "編集" , edit_admin_customer_path %></h4>
-        <h4><%#= link_to "削除" , admin_customer_path %></h4>
+        <h4><%= link_to "編集" , edit_admin_customer_path(id:customer.id) %></h4>
+        <h4><%= link_to "削除" , admin_customer_path(id:customer.id), method: :delete, data: { confirm: '本当に削除しますか?' } %></h4>
 
      </ul>
 

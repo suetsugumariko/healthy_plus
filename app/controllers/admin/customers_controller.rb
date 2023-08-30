@@ -28,6 +28,9 @@ class Admin::CustomersController < ApplicationController
   end
 
   def update
+    @customer = Customer.find(params[:id])
+    @customer.update(customer_params)
+    redirect_to admin_customers_path, notice:"ユーザー情報更新しました"
   end
 
   def withdraw
